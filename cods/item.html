@@ -1,0 +1,2073 @@
+
+
+
+
+
+<!DOCTYPE html>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>全国组织机构统一社会信用代码公示查询</title>
+	<link href="/css/font-awesome/css/font-awesome.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+	<link href="/css/bootstrap.min.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+    <link href="/css/css.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+    <link href="/css/float.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="/js/jquery-1.10.2.js?v=v2.0.4"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js?v=v2.0.4"></script>
+    <script type="text/javascript" src="/js/qrcode.js?v=v2.0.4"></script>
+    <script type="text/javascript" src="/js/commonMap.js?v=v2.0.4"></script>
+    <script src="/js/alert/js/sweet-alert.js?v=v2.0.4"></script>
+    <link rel="stylesheet" href="/js/alert/css/sweet-alert.css?v=v2.0.4">
+    <script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=g4srtgOCSX7vnRjcf5dnl5bM4yb311fT"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"  media="screen"/>
+
+    <link rel="stylesheet" type="text/css" href="/js/upload/webuploader.css">
+	<script type="text/javascript" src="/js/upload/webuploader.js"></script>
+
+    <script type="text/javascript">
+        var path = "";
+        var arrList = new Array();
+        $(function(){
+
+        	$('.search-box-select h3').click(function(){
+        		$(this).parents('.search-box-select').find('ul').toggle(
+        			function(){
+        				$('.search-box-main').addClass('open');
+        			},
+        			function(){
+        				$('.search-box-main').removeClass('open');
+        			}
+        		);
+
+        	});
+        	$('.search-box-select ul li').click(function(){
+        		$(this).parents('.search-box-select ul').hide();
+        		$('.search-box-select h3').html($(this).html());
+        	});
+
+        	$('#showTab a').click(function (e) {
+        		e.preventDefault()
+        		$(this).tab('show')
+        	})
+
+            $("#usedName").popover();
+            $("#taxpayer").popover({html : true });
+
+       	 $("[data-toggle='popover']").popover({
+		        html : true
+		    });
+        });
+    </script>
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"57305",secure:"57219"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc3-73" data-genuitec-path="/GlaucusSearch-V2/WebRoot/WEB-INF/jsp/search/detailLatest.jsp">
+<input type="hidden" name="currentPage" id="currentPage" value="" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc3-73" data-genuitec-path="/GlaucusSearch-V2/WebRoot/WEB-INF/jsp/search/detailLatest.jsp"/>
+<input type="hidden" name="oldq" id="oldq" value=""/>
+<input type="hidden" id="scanUuid" value=""/>
+<div class="container">
+	<!--topBar-->
+
+
+<script src="/js/gt.js"></script>
+<link href="/css/iconfont.css" type="text/css" rel="stylesheet" />
+<script src="/js/uuid.js"></script>
+<script src="/js/sm2/index.js"></script>
+<script type="text/javascript" src="/js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="/js/alertCommon.js"></script>
+<script>
+    $(function(){
+        $('input[placeholder]').placeholder();
+    });
+</script>
+
+
+
+
+	<div class="top">
+    	<div class="top-center">
+        	<div class="logo logo-2" id="divLogin" onclick="javascript:window.location.href = 'http://www.cods.org.cn/cods/gotoWebSite?jsonString=%7B%22usermobile%22%3A%222843ca8220f5ecf815e2f5c39a9757f4%22%2C%22token%22%3A%228aed4fe60d664d01a727109b88f1c6b1%22%7D&sign=c3874a7b7165cfcebf946f315117f2ec'" style="cursor:pointer">
+                <h3>全国组织机构统一社会信用代码公示查询</h3>
+                <h6>Unified social credit code query of national organization</h6>
+            </div>
+
+            <input type="hidden" value="common" id="search_name"/>
+            <!-- search -->
+            <div class="search">
+                <div class="search-box-main sm">
+                    <div class="search-box-left">
+                        <div class="search-box-select">
+                            <h3>代码/名称</h3>
+                            <ul style="display:;">
+                                <li onClick="setValue('common')">代码/名称</li>
+                                <li onClick="setValue('zcdz')">注册地址</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="search-box-middle">
+                        <input type="text" class="ipt_2 search-box-input search_input" autocomplete="off" placeholder="输入统一社会信用代码、机构名称等关键字" id="keyword">
+                    </div>
+                    <div class="search-box-right">
+                        <button type="button" class="search-box-btn" id="searchBtn"><i class="fa fa-search fa-flip-horizontal"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- /search -->
+
+            <!-- user -->
+            <div class="topuser">
+            	<div class="btn-group">
+
+
+
+                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                        <em><img src="/images/thumbnails.png" /></em>
+                        <p>153****0585</p>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/usercenterM/regMain" target="_blank"><i class="fa fa-user fa-fw"></i> 个人中心</a></li>
+                               <!--<li class="divider"></li>
+	                        <li><a href="/usercenterM/jgService" target="_blank"><i class="fa fa-user fa-cube"></i> 机构服务</a></li>-->
+	                    <li class="divider"></li>
+                        <li><a href="javascript:outLogin('');"><i class="fa fa-newspaper-o fa-fw"></i> 退出</a></li>
+                    </ul>
+
+
+                </div>
+            </div><!-- /user -->
+        </div>
+    </div>
+
+
+   <form action="" id="loginForm">
+	<div class="popUp" id="login_div" style="display:none;">
+	    <div class="box"><!--内容-->
+	        <div class="heading">
+	            <h3 class="title">登录账号</h3>
+	            <a class="close" href="javascript:login_div_none();"><i class="iconfont">&#xe668;</i></a>
+	        </div>
+	        <div class="main">
+	        	<!--登录-->
+	            <div class="query" id="user_form" style="display:;">
+	                <div class="each">
+	                    <div class="ico"><img src="/images/icon_user.png" /></div>
+	                    <div class="cdtn">
+	                        <input type="text" name="user_name" id="user_name" class="ipt_1" placeholder="手机号" />
+	                    </div>
+	                </div>
+	                <div class="each">
+	                    <div class="ico"><img src="/images/icon_password.png" /></div>
+	                    <div class="cdtn">
+	                        <input type="password" name="user_pswd" id="user_pswd" autocomplete="off"  class="ipt_1" placeholder="密码" />
+	                    </div>
+	                </div>
+	                <div class="each" style="padding-left: 0px;">
+	                    <div class="cdtn" id="captcha">
+	                         <p id="wait" class="">正在加载验证码......</p>
+	                    </div>
+	                </div>
+
+	                <div class="each button">
+	                    <button type="button" class="btn_1" id="sub" >登 录</button>
+	                </div>
+
+	                <div class="each text" style="text-align: center;">
+	                    <button class="button white sizeS h30" type="button" onClick="phone_login();"><i class="fa fa-qrcode"></i> 点击扫描二维码登录</button>
+	                </div>
+
+	                <div class="each prompt" style="display:none;text-align: center;" id="msg_space">
+	                	<p class="red" id="msg">请输入用户名！</p>
+	                </div>
+					<div class="prompt" style="display:none;text-align: center;">
+						<p style="color:red;" >当前系统访问量大，系统响应可能存在延迟，为提升您的使用体验，建议您登录后再尝试。</p>
+					</div>
+	                <div class="each text">
+	                	<p class="prompt floatRight">已注册APP（V1.0以上）用户可直接扫码登陆</p>
+	                	<p class="prompt floatLeft"><a href="javascript:window.location.href = '/usercenter/reg'">注册账号</a>&nbsp;&nbsp;<a href="javascript:window.location.href = '/usercenter/findPw'">忘记密码</a></p>
+						<!--<p class="prompt floatLeft"><a href="javascript:" onclick="weihu()">注册账号</a>&nbsp;&nbsp;<a href="javascript:"  onclick="weihu()">忘记密码</a></p>-->
+	                </div>
+	            </div>
+	            <!--登录 over-->
+	        	<!--登录-->
+	            <div class="query" id="phone_form" style="display:none;">
+                    <dl class="item">
+                        <dt class="tit text-center"><label class="text-center">请使用<b>"手机APP"</b>扫码登录</label></dt>
+                        <dd class="cnt">
+
+                            <div class="qrcode-login" style="display: ;" id="code_img">
+                                <img src="" id="Img"  onclick="change();" style="height:200px; max-height:1000px;" />
+                            </div>
+                            <div class="qrcode-login" style="display:none ;" id="code_mes">
+                                <h6>
+                                    <i class="fa fa-check-circle fa-3x text-theme"></i>
+                                </h6>
+                                <h4>扫描成功</h4>
+                                <h5>请在手机上确认登录</h5>
+                            </div>
+                            <div class="qrcode-login" style="display:none ;" id="code_success">
+                                <h6>
+                                    <i class="fa fa-check-circle fa-3x text-success"></i>
+                                </h6>
+                                <h4>登录成功</h4>
+                                <h5>准备跳转页面...</h5>
+                            </div>
+                            <div class="qrcode-login" style="display:none ;" id="code_close">
+                                <h6>
+                                    <i style="display:;" class="fa fa-exclamation-circle fa-3x text-danger" ></i>
+                                </h6>
+                                <h4>取消登录</h4>
+                                <h5 style="display:;"><button type="button" class="button sizeXS h30 red" onClick="flush();">刷新二维码</button></h5>
+                            </div>
+
+                        </dd>
+                    </dl>
+
+	                <div class="each text" style="text-align: center;">
+	                    <button class="button white sizeS h30" type="button" onClick="user_login();"><i class="fa fa-desktop"></i> 输入密码登录</button>
+	                </div>
+
+	            </div>
+	            <!--登录 over-->
+	        </div>
+	    </div>
+	</div>
+	</form>
+
+	<script>
+	var isOpen=false;
+	var url;
+	function user_login(){
+		$("#user_form").css("display","");
+		$("#phone_form").css("display","none");
+		isOpen=false;
+	}
+	function phone_login(){
+		$("#user_form").css("display","none");
+		$("#phone_form").css("display","");
+		isOpen=true;
+		if(!isSend){
+			getMsg();
+		}
+	}
+
+	var uuid='';
+	function change() {
+		var img = document.getElementById("Img");
+		uuid=Math.uuid();
+		//uuid='6D72B180-C333-453C-AF53-7422CFB4B11F';
+		img.src = "/qrCode/GetQrCode?uuid="+ uuid;
+	}
+
+	function flush(){
+	    $("#code_close").css("display","none");
+	    $("#code_img").css("display","");
+	    $("#code_mes").css("display","none");
+		change();
+		opt='';
+	}
+
+	$(function () {
+
+	  change();
+	  getMsg();
+
+	});
+
+	var isSend=false;
+	var opt='';
+	function getMsg()
+	{
+		isSend=true;
+	    $.ajax({
+	        url:"/qrCode/LongConnectionCheck?time="+Math.random(),
+	        type:"get",
+	        data:{'uuid':uuid,'opt':opt},
+	        dataType:"json",
+	        //async: false,
+	        success:function(data) {
+	            if(data.code=='0'){
+	            	opt='0';
+	                $("#code_img").css("display","none");
+	                $("#code_mes").css("display","");
+	            }else if(data.code=='2'){
+	            	opt='2';
+	                $("#code_close").css("display","");
+	                $("#code_img").css("display","none");
+	                $("#code_mes").css("display","none");
+	                $("#code_success").css("display","none");
+	            }else if(data.code=='1'){
+	            	opt='1';
+	                $("#code_img").css("display","none");
+	                $("#code_mes").css("display","none");
+	                $("#code_success").css("display","");
+	                //window.location.href = '/search';
+	                location.reload();
+	            }else if(data.code=='-1'){
+	                alert('登录异常');
+	            }
+	            if(isOpen){
+	            	getMsg();
+				}
+	            isSend=false;
+	            //getMsg();
+	        }
+	    });
+	}
+
+
+	function login_div(){
+		$("#login_div").css("display","block");
+	}
+	//处理session 失效登录
+	var isLogin=false;
+	var back;
+	function login_div(flag,callback){
+		isLogin=flag;
+		back=callback;
+		$("#login_div").css("display","block");
+	}
+
+	function login_div_none(){
+		isOpen=false;
+		$("#login_div").css("display","none");
+	}
+
+
+	function userLogin(){
+		if($.trim($("#user_name").val()).length ==0 || "请输入用户名..."==$.trim($("#user_name").val())){
+			$("#msg").html("请输入用户名！");
+			$("#msg_space").css("display","");
+			$("#user_name").focus();
+			return false;
+		}
+		if($.trim($("#user_pswd").val()).length ==0){
+			$("#msg").html("请输入密码！");
+			$("#msg_space").css("display","");
+			$("#show_user_pswd").focus();
+			return false;
+		}
+
+	    var returnObj = jQuery.ajax({
+	        type: "POST",
+	        url: "/usercenter/validateLogin",
+	        data: $("#loginForm").serialize(),
+	        dataType:"json",
+	        beforeSend: function(send) {
+	            $("#login_but").attr("disabled",true);
+	            $("#login_but").html("登录中...");
+	        },
+	        success:function(data){
+				if(data.code == "0"){
+					location.reload();
+					/**if(isLogin){
+					location.reload();
+					//login_div_none();
+					//back();
+					//alertInfo('操作成功！');
+					}else{
+					window.location.href = data.toUrl;
+					}**/
+				}else if(data.code == "1"){
+					$("#msg").html("用户名或密码错误！");
+					$("#msg_space").css("display","");
+
+				}else{
+					$("#msg").html("系统异常，请稍候再试！");
+					$("#msg_space").css("display","");
+					}
+	    	},
+	        complete: function() {
+	   		 $("#login_but").attr("disabled",false);
+	         $("#login_but").html("登录");
+	       }
+	    });
+	}
+
+
+	var handler2 = function (captchaObj) {
+	    captchaObj.appendTo('#captcha');
+	    captchaObj.onReady(function () {
+	        $("#wait").hide();
+	        $("#wait").css("dispaly","none");
+	    });
+        captchaObj.onSuccess(function () {
+			$('#sub').click();
+        })
+
+	    $('#sub').click(function () {
+	    	if($.trim($("#user_name").val()).length ==0 || "请输入用户名..."==$.trim($("#user_name").val())){
+	    		$("#msg").html("请输入用户名！");
+	    		$("#msg_space").css("display","");
+	    		$("#user_name").focus();
+	    		return false;
+	    	}
+	    	if($.trim($("#user_pswd").val()).length ==0){
+	    		$("#msg").html("请输入密码！");
+	    		$("#msg_space").css("display","");
+	    		$("#show_user_pswd").focus();
+	    		return false;
+	    	}
+
+	        var result = captchaObj.getValidate();
+	        if (!result) {
+	        	$("#msg").html("请完成验证！");
+				$("#msg_space").css("display","");
+	            return false;
+	        }
+			var user_pawd = $('#user_pswd').val();
+            var curve = "sm2";
+            var pubkeyHex = "04a494ef2071cce6524c6761dc6853a7024d023cd5169fbe2e3a3e2914f3febb15617058e90c5dc1adde01eb718e69b47b54819dc1810770bab8f8c4095b2d4178";
+            var encryptData = sm2Encrypt(user_pawd, pubkeyHex, 0);  //加密
+
+	        $.ajax({
+	        	url: "/usercenter/validateLogin",
+	            type: 'POST',
+	            dataType: 'json',
+	            data: {
+	        		user_name: $('#user_name').val(),
+	        		user_pswd: encryptData,
+	                geetest_challenge: result.geetest_challenge,
+	                geetest_validate: result.geetest_validate,
+	                geetest_seccode: result.geetest_seccode
+	            },
+	            success:function(data){
+	    			if(data.code == "0"){
+	    				//window.location.href = data.toUrl;
+	    				//location.reload();
+	    				var _keyword = $.trim($("#keyword").val());
+	    				//alert(data.postJsonString);
+	    				location.href = path+"/latest/searchR?q="+encodeURI(encodeURI(_keyword))+"&currentPage=1&t=common&searchToken=a12b35cf6e29dc346022b266e16be1d8";
+
+
+	    			}else if(data.code == "1"){
+	    				$("#msg").html("用户名或密码错误！");
+	    				$("#msg_space").css("display","");
+	    				captchaObj.reset();
+
+	    			}else if(data.code == "2"){
+	    				$("#msg").html("该账户已被停用！");
+	    				$("#msg_space").css("display","");
+	    				captchaObj.reset();
+
+	    			}else if(data.code == "3"){
+	    				$("#msg").html("验证失败！");
+	    				$("#msg_space").css("display","");
+	    				captchaObj.reset();
+
+	    			}else{
+	    				$("#msg").html("系统异常，请稍候再试！");
+	    				$("#msg_space").css("display","");
+	    				captchaObj.reset();
+	    				}
+	        	},
+	            complete: function() {
+	        		 $("#sub").attr("disabled",false);
+	                 $("#sub").html("登录");
+	            }
+	        });
+	    })
+	    // 更多接口说明请参见：http://docs.geetest.com/install/client/web-front/
+	    window.gt = captchaObj;
+	};
+
+	$.ajax({
+	    url: "/gc/geetest/login?t=" + (new Date()).getTime(), // 加随机数防止缓存
+	    type: "get",
+	    dataType: "json",
+	    success: function (data) {
+
+	        // 调用 initGeetest 进行初始化
+	        // 参数1：配置参数
+	        // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它调用相应的接口
+	        initGeetest({
+	            // 以下 4 个配置参数为必须，不能缺少
+	            gt: data.gt,
+	            challenge: data.challenge,
+	            offline: !data.success, // 表示用户后台检测极验服务器是否宕机
+	            new_captcha: data.new_captcha, // 用于宕机时表示是新验证码的宕机
+
+	            product: "popup", // 产品形式，包括：float，popup
+	            width: "320px"
+	            // 更多配置参数说明请参见：http://docs.geetest.com/install/client/web-front/
+	        }, handler2);
+	    }
+	});
+
+	$(function(){
+		$("#searchBtn").on("click",function(){
+			toSearch();
+		});
+
+		$("#keyword").on("keyup",function(e){
+			var keyCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+			if (keyCode == 13) {//输入回车
+				toSearch();
+			}
+		});
+
+	});
+
+	function toSearch(){
+		var currentPage = 1;
+		var _keyword = $.trim($("#keyword").val());
+		if(_keyword.length<=0){
+			$("#keyword").focus();
+		}else{
+			if(typeof captchaobj2 !== 'undefined'){
+
+				toSearch();
+				return false;
+			}
+			$.ajax({
+			    url: "/latest/isSearch",
+			    type: "get",
+			    dataType: "json",
+			    success: function (data) {
+					if(data.code=='1'){
+						//验证码
+						captchaObj2.onSuccess(function () {
+							var result = captchaObj2.getValidate();
+							if (!result) {
+								return alert('请完成验证');
+							}
+
+				       		var type=$("#search_name").val();
+				       		if(type=="undefined" || type=="" || type==null || type==undefined){
+				       			type="common";
+				       		}
+							var gc='&geetest_challenge='+result.geetest_challenge+"&geetest_validate="+result.geetest_validate+"&geetest_seccode="+result.geetest_seccode;
+							location.href = path+"/latest/searchR?q="+encodeURI(encodeURI(_keyword))+"&t="+type+"&currentPage=1&searchToken=a12b35cf6e29dc346022b266e16be1d8"+gc;
+						});
+						captchaObj2.verify();
+					}else{
+						location.href = path+"/latest/searchR?q="+encodeURI(encodeURI(_keyword))+"&currentPage=1&t=common&searchToken=a12b35cf6e29dc346022b266e16be1d8";
+					}
+			    }
+			});
+
+
+
+		}
+	}
+
+
+
+	function setValue(str){
+		$("#search_name").val(str);
+		if(str=='common'){
+			$("#keyword").attr('placeholder','输入统一社会信用代码、机构名称等关键字');
+		}else{
+			$("#keyword").attr('placeholder','输入注册地址等关键字');
+		}
+	}
+    function weihu(){
+	    $("#msg_space").show();
+        $("#msg").html("系统正在升级,请稍后再试!");
+    }
+	</script>
+
+    <!--topBar-->
+    <div class="content clearfix">
+    	<!-- main -->
+    	<div class="main">
+            <!-- details -->
+            <div class="details">
+
+                <div class="summary clearfix">
+                    <div class="summary_pic" data-toggle="modal" data-target="#modal-a3">
+                        <em><img src="/images/image_qrcode_180x180.png"></em>
+                        <span>查看组织机构二维码</span>
+                    </div>
+
+                    <div class="summary_info clearfix">
+                        <h3>
+                            资溪县面包产业发展办公室
+
+	       					<!--  <span class="float-right">
+
+
+
+	                        </span>-->
+
+
+	                        <!-- <em class="tag blue" data-toggle="modal" data-target="#modal-a8"  style="margin-top:6px;cursor:pointer">发票抬头
+                            </em> -->
+                        </h3>
+
+                        <h6></h6>
+                        <ul style="margin-top:20px;">
+                        	<li class="third">
+                            	<label>法定代表人或负责人姓名</label>
+                                <i class="fa fa-user"></i> 曾长华
+                            </li>
+                            <li class="third">
+                            	<label>注册资本</label>
+                                <i class="fa fa-money"></i>  18万元(人民币元)
+                            </li>
+                            <li class="third">
+                            	<label>成立日期</label>
+                                <i class="fa fa-calendar"></i>  未公示
+                            </li>
+                        </ul>
+                        <h3 style="margin-top:10px;">
+
+                         	<em class="tag blue float-right" style="border:none;"><i class="fa fa-refresh"></i> 最后更新日期：未公示</em>
+
+
+
+
+
+
+
+
+
+
+							   		<em class="tag green">经营状态：正常</em>
+
+
+
+
+
+                              <!-- <em class="tag green"><a href="/latest/toClaim?jgdm1=8c18ba47fa75baf40befda902b482251" target="_black">机构认领</a></em>
+                              <em class="tag green"><a href="/latest/toQrcode" target="_black">管理二维码</a></em>
+                              -->
+                        </h3>
+                    </div>
+
+
+
+
+                </div>
+
+               <!-- detmain -->
+                <div class="detmain">
+                    <div class="codes clearfix">
+                    	<ul>
+
+                            <li>
+                            	<h3>统一社会信用代码</h3>
+                                <p><img src="/images/icon_xin_22x22.png" /> 12361129799463929H</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- /detmain -->
+
+                <!-- JiaThis Button BEGIN
+				<div id="ckepop" style="float:left; margin-left:30px;margin-top:5px; font-size:14px;">
+				<span class="jiathis_txt">分享到：</span>
+				<a class="jiathis_button_weixin">微信</a>
+				<a class="jiathis_button_cqq">QQ好友</a>
+				</div>
+				<script type="text/javascript" src="http://v2.jiathis.com/code/jia.js" charset="utf-8"></script>
+
+				-->
+				<!-- JiaThis Button END -->
+
+                <div style="float:right; margin:5px; font-size:14px;cursor:pointer;" onclick="$('#myModal').modal();"><i class="fa fa-exclamation-circle text-theme"></i> 字段说明</div>
+
+                <!-- detmain -->
+                <div class="detmain">
+                    <ul class="info clearfix">
+                        <!--<li class="split_line"></li>-->
+                        <li>
+                            <h6>注册地址</h6>
+                            <i class="fa fa-map-marker"></i> 资溪县建设中路41号
+                            <button type="button" class="btn btn-primary btn-xs" data-toggle="modal" onClick="show_map();"><i class="fa fa-map-o"></i> 查看地图</button>
+                        </li>
+                        <li class="half" style="height: 70px;">
+                            <h6>机构类型</h6>
+                            <p>事业单位</p>
+                        </li>
+                        <li class="half" style="height: 70px;">
+
+                        		<h6>批准机构名称</h6>
+
+
+                            <p>资溪县编委会</p>
+                        </li>
+                        <li class="half" style="height: 70px;">
+                            <h6>经营期限</h6>
+                            <p>2018-01-08 到 2023-01-08</p>
+                        </li>
+                        <li class="half" style="height: 70px;">
+                            <h6>登记号</h6>
+                            <p>未公示</p>
+                        </li>
+                        <li class="split_line"></li>
+                        <li class="half" style="height: 70px;">
+                            <h6>经济类型</h6>
+                            <p>未公示</p>
+                        </li>
+                        <li class="half" style="height: 70px;">
+                            <h6>经济行业</h6>
+                            <p>未公示</p>
+                        </li>
+                        <li class="">
+                            <h6>经营范围</h6>
+                            <p>服务产业,服务面包户为面包生产,经营者提供信息劳务,法律服务</p>
+                        </li>
+                    </ul>
+
+
+
+
+                </div><!-- /detmain -->
+
+
+
+                <!-- detmain -->
+                <div class="detmain">
+                    <div class="detmain_tab">
+                        <ul id="showTab">
+                            <li class="active"><a href="#cnt_2" data-toggle="tab">机构历史</a></li>
+                            <li ><a href="#cnt_1" data-toggle="tab">机构体系</a></li>
+                        </ul>
+                    </div>
+                    <div id="showTabContent" class="tab-content">
+                        <div class="tab-pane fade " id="cnt_1">
+                            <div class="row margin-vertical-lg">
+                                <div class="col-sm-8 col-sm-offset-2">
+                                    <div class="panel panel-info">
+                                        <div class="panel-heading text-center">
+                                            <h3 class="panel-title"><i class="fa fa-exclamation-circle"></i> 提示！</h3>
+                                        </div>
+                                        <div class="panel-body text-center">
+                                            <p><a href="#" class="btn btn-link btn-lg text-theme margin-vertical-lg">想了解更多详细信息，请扫描右侧二维码下载APP <i class="fa fa-arrow-right"></i></a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade in active" id="cnt_2">
+		                    <!-- noData -->
+				        	<div class="noData">
+				            	<h3><i class="fa fa-file-o"></i></h3>
+				                <p>暂无数据</p>
+				            </div>
+				            <!-- noData -->
+	                    	<!-- timeline -->
+	                        <div class="timeline" id="historyPannel" style="display:none;">
+
+	                        </div><!-- /timeline -->
+                        </div>
+                    </div><!-- /tab-content -->
+
+
+
+                </div><!-- /detmain -->
+
+            </div><!-- /details -->
+
+
+        </div><!-- /main -->
+
+        <!-- aside -->
+        <div class="aside">
+            <div class="opt_btn">
+            	<a href="javascript:add_collect();" class="" id="collect_a"><i class="fa fa-star-o"></i><br />收藏</a>
+                <a href="javascript:add_correct();" ><i class="fa fa-wrench"></i><br /> 纠错</a>
+                <a href="javascript:;" data-toggle="modal" data-target="#modal-a3"><i class="fa fa-qrcode"></i><br />二维码</a>
+            </div>
+            <div class="btn-group btn-group-sm margin-bottom-sm" style="width:100%;display:none;">
+                <button type="button" class="btn btn-default" style="width:28%;">分享至</button>
+                <button type="button" class="btn btn-danger" style="width:24%;"><i class="fa fa-weibo"></i> 微博</button>
+                <button type="button" class="btn btn-success" style="width:24%;"><i class="fa fa-weixin"></i> 微信</button>
+                <button type="button" class="btn btn-info" style="width:24%;"><i class="fa fa-qq"></i> QQ</button>
+            </div>
+            <div class="panel panel-default margin-bottom-sm">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center"><span class="text-success"><i class="fa fa-wechat"></i> 微信公众号</span></h3>
+                </div>
+                <div class="panel-body text-center">
+                    <img src="/images/lrtk_weixin2.jpg" class="img-responsive" style="margin:0 auto;" />
+                </div>
+            </div>
+
+            <div class="panel panel-default margin-bottom-sm">
+                <div class="panel-heading">
+                    <h3 class="panel-title text-center"><span class="text-danger"><i class="fa fa-mobile"></i> APP下载</span>
+
+                    </h3>
+                </div>
+                <div class="panel-body text-center">
+                    <img src="/images/lrtk_weixin.png" class="img-responsive" style="margin:0 auto;" />
+                </div>
+            </div>
+        </div><!-- /aside -->
+
+    </div>
+
+
+
+
+
+<link href="/css/float.css?v=v2.0.4" type="text/css" rel="stylesheet"  data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-34" data-genuitec-path="/GlaucusSearch-V2/WebRoot/WEB-INF/jsp/feedbackCommon.jsp"/>
+
+    <div class="footer">
+        <p>Copy 2018 全国组织机构统一社会信用代码数据服务中心   京ICP备09064497号 <br /> 京公网安备110102001257</p>
+    </div>
+
+	<!-- 代码 开始 -->
+	<!--  <a id="moquu_top" href="javascript:void(0)" style="display: block;"></a>-->
+	<!-- 代码 结束 -->
+	<!--  <a id="kfbtn" target="_blank" href="https://ss.cods.org.cn/servicechat/site/chat/c85bd3b736604d7c94f9a85d444304b8?source=pcweb" style="display: block;"></a>-->
+
+
+	<div class="cndns-right">
+
+
+    <div class="cndns-right-meau meau-contact">
+        <a href="https://ss.cods.org.cn/servicechat/site/chat/c85bd3b736604d7c94f9a85d444304b8?source=pcweb" target="_blank" class="cndns-right-btn">
+            <span class="demo-icon" style="color:#337ab7">&#xe859;</span>
+            <p>
+			                在线<br />
+			                客服
+            </p>
+        </a>
+
+    </div>
+
+    <div class="cndns-right-meau meau-top" id="top-back">
+        <a href="javascript:" class="cndns-right-btn" onclick="topBack()">
+            <span class="demo-icon">&#xe6b0;</span>
+            <i>顶部</i>
+        </a>
+    </div>
+
+</div>
+
+
+
+<!--意见反馈-->
+<div class="popUp" style="display:none;" id="feedbackDivId">
+    <div class="box">
+        <div class="heading">
+            <h3 class="title">意见反馈</h3>
+            <a class="close" href="javascript:void(0);" onClick="$('#feedbackDivId').hide();"><i class="iconfont">&#xe668;</i></a>
+        </div>
+            <div class="main">
+                <div class="userForm">
+                    <dl class="each" id="feedBackContentDivId">
+                        <dt class="eachHead"><label>意见内容：</label></dt>
+                        <dd class="eachBody">
+                            <textarea class="textarea sizeM" placeholder="请输入意见内容" name="feedBackContent"
+                                      id="feedBackContent"></textarea>
+                            </br><span class="prompt"></span>
+                        </dd>
+                    </dl>
+                    <dl class="each">
+                        <dt class="eachHead"><label>联系方式：</label></dt>
+                        <dd class="eachBody">
+                            <input type="text" class="input h40 sizeM" name="userContact" id="userContact"
+                                   placeholder="邮箱/电话">
+                            </br><span class="prompt"></span>
+                        </dd>
+                    </dl>
+                </div>
+
+            </div>
+
+            <div class="bottom">
+                <button type="button" class="button blue" onclick="submitFeedBack()">确认</button>
+                <button type="button" class="button white" onClick="$('#feedbackDivId').hide();">取消</button>
+            </div>
+    </div>
+</div>
+<link rel="stylesheet" href="/js/alert/css/sweet-alert.css">
+<script src="/js/alert/js/sweet-alert.js"></script>
+<script src="/sysmanage/js/jquery.validate_pack.js"  type="text/javascript"></script>
+<script type="text/javascript">
+function topBack(){
+  $('body,html').animate({scrollTop:0},300);
+}
+
+//   MD,上面的方式不知道为啥不能生效，只能手动更改了
+   function  formValidateFeedback() {
+
+       var feedBackContent = $("#feedBackContent").val();
+       if(!feedBackContent || feedBackContent=="")
+       {
+           $("#feedBackContentDivId").addClass("error").removeClass("ok");
+           $("#feedBackContentDivId").find("span.prompt").html("<i class=\"iconfont fontsize14\">&#x3586;</i>请输入反馈信息");
+           return false;
+       }
+       $("#feedBackContentDivId").addClass("ok").removeClass("error");
+//       $("#feedBackContentDivId").find("span.prompt").html("<i class=\"iconfont fontsize14\">&#x3587;</i>");
+       return true;
+   }
+
+    //显示弹出框
+    function showFeedBack() {
+        $("#feedbackDivId").show();
+    }
+
+    function submitFeedBack() {
+        if(!formValidateFeedback())
+        {
+            return false;
+        }
+
+    var flag=true;
+   	var gc="";
+   	//验证码
+   	captchaObj2.onSuccess(function () {
+   		var result = captchaObj2.getValidate();
+   		if (!result) {
+   			return alert('请完成验证');
+   		}else{
+   	        //提交反馈意见
+   	        $.ajax({
+   	            type:"post",
+   	            url:"/feedback/saveFeedBack",
+   	            data:{
+   	                "feedBackContent":encodeURI(encodeURI($("#feedBackContent").val())),
+   	                "userContact":encodeURI(encodeURI($("#userContact").val()+"")),
+   	                geetest_challenge: result.geetest_challenge,
+   	                geetest_validate: result.geetest_validate,
+   	                geetest_seccode: result.geetest_seccode
+   	            },
+   	            dataType:"json",
+   	            success:function(retJson) {
+   	                if(retJson&&retJson.result=="true") {
+   	                    successFeedbackUrl();
+   	                }else{
+   	                    errorFeedbackUrl();
+   	                }
+   	             $("#feedBackContent").val('');
+   	             $("#userContact").val('');
+   	            },
+   	            error:function() {
+   	                errorFeedbackUrl();
+   	            }
+   	        });
+
+   	   	}
+   	});
+     captchaObj2.verify();
+
+    }
+    /*
+     * 操作成功提示
+     * */
+    function successFeedbackUrl() {
+        swal({
+            title: "操作成功！",
+            type: "success"
+        });
+        $("#feedbackDivId").hide();
+    }
+    /*
+     * 操作失败提示
+     * */
+    function errorFeedbackUrl() {
+        swal({
+            title: "操作失败",
+            type: "warning"
+        });
+        $("#feedbackDivId").hide();
+    }
+
+    //返回顶部
+    function b() {
+    	h = $(window).height(),
+    	t = $(document).scrollTop(),
+    	$("#moquu_top").show()
+    	//t > h ? $("#moquu_top").show() : $("#moquu_top").hide()
+    }
+    $(document).ready(function() {
+    	b(),
+    	$("#moquu_top").click(function() {
+    		$(document).scrollTop(0)
+    	})
+    }),
+    $(window).scroll(function() {
+    	b()
+    });
+    function toKf(){
+    	if(ajaxValidateLogin()){
+    		window.open("http://192.168.12.177:8080/site/chat/c85bd3b736604d7c94f9a85d444304b8");
+    	}else{
+    		window.open("http://192.168.12.177:8080/site/chat/12323435");
+    	}
+    }
+
+    /**验证用户登录**/
+	function ajaxValidateLogin(){
+    var flag=true;
+    $.ajax({
+        type: "POST",
+        url: "/usercenter/ajaxValidate.login",
+        dataType:"json",
+        async:false,
+        success:function(data){
+            if(data.code == "1"){
+                flag=false;
+
+            }
+        }
+    });
+//    console.log(flag);
+    return flag;
+}
+</script>
+<script type="text/javascript" src="/js/geetest.js?v=v2.0.4"></script>
+<style type="text/css">
+
+
+@font-face {
+  font-family: 'iconfont';
+  src: url('/css/font/iconfont.eot');
+  src: url('/css/font/iconfont.eot?#iefix') format('embedded-opentype'),
+      url('/css/font/iconfont.woff2') format('woff2'),
+      url('/css/font/iconfont.woff') format('woff'),
+      url('/css/font/iconfont.ttf') format('truetype'),
+      url('/css/font/iconfont.svg#iconfont') format('svg');
+}
+.demo-icon{
+ font-family: "iconfont" !important;
+  font-style:normal;
+  font-weight:normal;
+  speak:none;
+  display:inline-block;
+  text-decoration:inherit;
+  text-align:center;
+  font-variant:normal;
+  text-transform:none;
+  font-size:24px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:24px;
+  color:#999;
+
+}
+
+/*new right*/
+.cndns-right{position:fixed;right:1px;top:50%;margin-top:-100px;z-index:100}
+.cndns-right-meau{position:relative;}
+.cndns-right-btn{width:48px;height:48px;border:1px solid #ddd;text-align:center;display:block;margin-bottom:6px;position:relative;background-color:#fff}
+.cndns-right-btn span{color:#848484;font-size:26px;line-height:48px;}
+.cndns-right-btn sup{display:block;min-width:24px;height:24px;text-align:center;line-height:24px;color:#fff;border-radius: 50%;background-color:#ff6800;position:absolute;left:-12px;top:-12px;}
+.cndns-right-btn p{color:#337ab7;font-size:14px;line-height:18px;padding-top:5px;display:none;}
+.cndns-right-meau:hover .cndns-right-btn span{display:none}
+.cndns-right-meau:hover .cndns-right-btn p{display:block;}
+.meau-car .cndns-right-btn {border-color:#ff6800;margin-bottom:20px;}
+.meau-car.cndns-right-meau:hover .cndns-right-btn{background-color:#ff6800}
+.meau-car.cndns-right-meau:hover .cndns-right-btn span{color:#fff;display:block;}
+.meau-car .cndns-right-btn span{color:#ff6800;}
+.meau-sev .cndns-right-btn{border-color:#ff6800;background:url(images/02index-banner-8.gif) no-repeat #ff6800 center;}
+.meau-sev .cndns-right-btn p{color:#fff}
+.meau-sev .cndns-right-btn span{color:#fff}
+.meau-top .cndns-right-btn span{font-size:12px;line-height:12px;padding-top:10px;display:block}
+.meau-top .cndns-right-btn i{display:block;color:#999}
+.meau-top.cndns-right-meau:hover .cndns-right-btn{background-color:#337ab7}
+.meau-top.cndns-right-meau:hover .cndns-right-btn span{display:block;color:#fff}
+.meau-top.cndns-right-meau:hover .cndns-right-btn i{color:#fff;}
+.cndns-right-box{position:absolute;top:-15px;right:48px;padding-right:25px;display:none;}
+.cndns-right-box .box-border{border:1px solid #ccc;border-top:4px solid #ff6800;padding:20px;background-color:#fff;-webkit-box-shadow: 0 3px 8px rgba(0,0,0,.15);-moz-box-shadow: 0 3px 8px rgba(0,0,0,.15);box-shadow: 0 3px 8px rgba(0,0,0,.15);position:relative}
+.cndns-right-box .box-border .arrow-right{display:block;width:13px;height:16px;background:url(images/arrow.png) no-repeat;position:absolute;right:-13px;top:26px;}
+.cndns-right-box .box-border .sev-t span{font-size:42px;float:left;display:block;line-height:56px;margin-right:20px;color:#d3d3d3}
+.cndns-right-box .box-border .sev-t p{float:left;color:#ff6800;font-size:24px;line-height:28px;}
+.cndns-right-box .box-border .sev-t p i{display:block;font-size:14px;color:#aaa;}
+.cndns-right-box .box-border .sev-b{padding-top:15px;margin-top:15px;border-top:1px solid #e4e4e4}
+.cndns-right-box .box-border .sev-b h4{color:#666;font-size:14px;font-weight:normal;padding-bottom:15px;}
+.cndns-right-box .box-border .sev-b li{float:left;width:33.33333%}
+.cndns-right-box .box-border .sev-b li a{display:inline-block;color:#999;font-size:13px;padding-left:43px;background:url(images/q1.gif) no-repeat left 3px;line-height:36px;}
+.cndns-right-box .box-border .sev-b li a:hover{color:#ff6800}
+.meau-sev .cndns-right-box .box-border{width:430px;}
+.meau-contact .cndns-right-box .box-border{width:230px;}
+.cndns-right-meau:hover .cndns-right-box{display:block}
+.meau-code .cndns-right-box{top:inherit;bottom:-35px;}
+.meau-code .cndns-right-box .box-border{width:156px;text-align:center;border-top:1px solid #ccc;}
+.meau-code .cndns-right-box .box-border i{display:block;color:#f66e06;font-size:16px;line-height:16px;}
+.meau-code .cndns-right-box .box-border .arrow-right{top:inherit;bottom:50px;}
+.meau-sev .cndns-right-btn .demo-icon{display:none;}
+.meau-sev:hover .cndns-right-btn{background:#ff6800}
+.meau-zs .cndns-right-btn{background-color:#ff6800;color:#fff;margin-top:80px;border-color:#ff6800}
+.meau-zs .cndns-right-btn span{color:#fff}
+.meau-zs .cndns-right-btn p{color:#fff}
+</style>
+
+
+</div>
+
+<!--二维码-->
+<div class="modal fade" id="modal-a3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">二维码</h4>
+            </div>
+            <div class="modal-body">
+            	<div class="text-center">
+                	<div id="qrcode2" style="display:inline-block; width:auto;"></div>
+                </div>
+                <div class="text-center margin-top-sm">
+                	<p class="fz12 text-primary">使用统一代码查询APP进行扫描</p>
+                </div>
+                <hr />
+
+                <div class="row">
+                    <label class="col-sm-5 text-right">统一社会信用代码：</label>
+                    <div class="col-sm-7">
+                    	<p>12361129799463929H</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-sm-5 text-right">机构名称：</label>
+                    <div class="col-sm-7">
+                    	<p>资溪县面包产业发展办公室</p>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+<!--二维码-->
+<div class="modal fade" id="modal-a8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">发票抬头</h4>
+            </div>
+            <div class="modal-body">
+            	<div class="text-center">
+                	<div id="qrcode3" style="display:inline-block; width:auto;"></div>
+                </div>
+                <div class="text-center margin-top-sm">
+                	<p class="fz12 text-primary">使用统一代码查询APP进行扫描</p>
+                </div>
+                <hr />
+
+                <div class="row">
+                    <label class="col-sm-5 text-right">税号：</label>
+                    <div class="col-sm-7">
+                    	<p>12361129799463929H</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <label class="col-sm-5 text-right">名称：</label>
+                    <div class="col-sm-7">
+                    	<p>资溪县面包产业发展办公室</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-5 text-right">地址：</label>
+                    <div class="col-sm-7">
+                    	<p>资溪县建设中路41号</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-5 text-right">电话号码：</label>
+                    <div class="col-sm-7">
+                    	<p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-5 text-right">开户银行：</label>
+                    <div class="col-sm-7">
+                    	<p></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <label class="col-sm-5 text-right">开户账号：</label>
+                    <div class="col-sm-7">
+                    	<p></p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+
+
+
+<div class="popUp" id="map_div" style="display:none;">
+	    <div class="box" style="width:1200px; margin-top:7%;"><!--内容-->
+	        <div class="heading">
+	            <h3 class="title">地图</h3>
+	            <a class="close" href="javascript:close_map();"><i class="iconfont">&#xe668;</i></a>
+	        </div>
+	        <div class="main" style="padding:0; position: relative;">
+				<div class="map baidu-maps" id="allmap" style="height:600px;"><!--地图--></div>
+				<div class="copyright" style="position: absolute; bottom:0; background-color: white; width:100%; padding:0 10px; box-sizing:border-box;">
+			        <span style="float:right; color:#cd0f11;">地图数据信息仅供参考</span>
+			        <span style="float:left;">审图号：GS(2016)2089号</span>
+			    </div>
+	        </div>
+	    </div>
+</div>
+
+<div class="popUp" style="display:none;" id="alert_correct">
+    <div class="box" style="width: 725px;">
+        <div class="heading">
+            <h3 class="title">内容纠错</h3>
+            <a class="close" href="javascript:void(0);" onclick="$('#alert_correct').hide();"><i class="fa fa-close"></i></a>
+        </div>
+        <div class="main">
+            <div class="cnt">
+                <div class="userForm">
+                    <div style="text-align: center;color:red;dispaly:none;" id="msg2"></div>
+
+                    <dl class="each">
+                        <div class="eachHead"><h3 class="title">上传证照：</h3></div>
+                    </dl>
+                    <div class="addPic-left leftpic" style="height:130px;">
+
+
+						<div class="pic"  ><img src="/images/default-addpic-300x300.png" id="imagepath" width="100" height="100"></div>
+						<a id="picker" class="btn btn-block">上传证照</a>
+                    </div>
+                    <p class="font">请上传单位统一社会信用代码电子证照（如营业执照、社会团体法人登记证、民办非企业单位登记证书、基金会法人登记证书、工会法人资格证书、事业单位法人证书、律师事务所执业许可证等照片）</p>
+                 <dl class="each">
+                        <p class="title">请标明哪些项有问题(非必填)</p>
+                        <dd class="eachBody">
+                                <ul>
+
+                                		<li><input name="field1" class="fields" value="jgmc" type="checkbox">组织机构名称</li>
+
+                                		<li><input name="field1" class="fields" value="fddbr" type="checkbox">法人姓名</li>
+
+                                		<li><input name="field1" class="fields" value="zcdz" type="checkbox">注册地址</li>
+
+                                		<li><input name="field1" class="fields" value="zczj" type="checkbox">注册资本</li>
+
+                                		<li><input name="field1" class="fields" value="clrq" type="checkbox">成立日期</li>
+
+                                		<li><input name="field1" class="fields" value="jyzt" type="checkbox">经营状态</li>
+
+                                		<li><input name="field1" class="fields" value="jyqxz" type="checkbox">经营期限自</li>
+
+                                		<li><input name="field1" class="fields" value="jyqxe" type="checkbox">经营期限至</li>
+
+
+                                </ul>
+                            </dd>
+                    </dl>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="bottom">
+            <p class="COLOR">若未核实到有效公示来源，问题数据将无法处理，建议联系发证机关</p>
+            <button type="button" class="button blue" onclick="sub_correct();">保存</button>
+            <button type="button" class="button white" onclick="$('.popUp').hide();">取消</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" style="width: 900px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">字段说明</h4>
+            </div>
+            <div class="modal-body">
+            	<iframe src="/css/fieldInfo.html??v=1" frameborder="0" width="100%" height="500"></iframe>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
+</body>
+<script>
+
+
+
+$(document).ready(function() {
+
+
+
+
+        qrcode1 = new QRCode(document.getElementById("qrcode3"), {
+            width : 180,//设置宽高
+            height : 180
+        });
+        var BASE_WEB_URL1 = "https://ss.cods.org.cn";
+        var qrcodeUrl1 = BASE_WEB_URL1 + "/ElectronicBill/toSysBill/12361129799463929H";
+        qrcode1.makeCode(qrcodeUrl1);
+
+	//$("#taxpayer").attr("data-content", $("#nsrdiv").html());
+});
+
+//文件上传
+jQuery(function() {
+
+    var $ = jQuery,
+        $list = $('#thelist'),
+        $btn = $('#ctlBtn'),
+        state = 'pending',
+        uploader;
+
+    uploader = WebUploader.create({
+
+        // 不压缩image
+        resize: false,
+        auto: true,
+        // swf文件路径
+        swf:  '/js/upload/Uploader.swf',
+
+        // 文件接收服务端。
+        server: '/usercenterM/upload/uploadImage',
+
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+        pick: '#picker',
+
+    // 只允许选择图片文件。
+    	accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        //mimeTypes: 'image/*'
+        mimeTypes: 'image/jpg,image/jpeg,image/png'
+   	 }
+
+    });
+
+
+    // 文件上传过程中创建进度条实时显示。
+    uploader.on( 'uploadProgress', function( file, percentage ) {
+        var $li = $( '#'+file.id ),
+            $percent = $li.find('.progress .progress-bar');
+
+        // 避免重复创建
+        if ( !$percent.length ) {
+            $percent = $('<div class="progress progress-striped active">' +
+              '<div class="progress-bar" role="progressbar" style="width: 0%">' +
+              '</div>' +
+            '</div>').appendTo( $li ).find('.progress-bar');
+        }
+
+        $li.find('p.state').text('上传中');
+
+        $percent.css( 'width', percentage * 100 + '%' );
+    });
+
+    uploader.on( 'uploadSuccess', function( file,data ) {
+        $("#imagepath").attr("src",data.imagestr);
+        $("#scanUuid").val(data.scanUuid);
+        alertInfo("图片上传成功！");
+    });
+
+    uploader.on( 'uploadError', function( file ) {
+        $( '#'+file.id ).find('p.state').text('上传出错');
+    });
+    uploader.on( 'error', function( file ) {
+    	if (file=="Q_TYPE_DENIED"){
+            swal("警告", "请上传JPG格式文件", "error");
+        }else if(file=="F_EXCEED_SIZE"){
+        	swal("警告", "文件大小不能超过8M", "error");
+        }
+
+        $( '#'+file.id ).find('p.state').text('上传出错');
+    });
+
+    uploader.on( 'uploadComplete', function( file ) {
+        $( '#'+file.id ).find('.progress').fadeOut();
+    });
+
+
+    $btn.on( 'click', function() {
+
+        if ( state === 'uploading' ) {
+            uploader.stop();
+        } else {
+            uploader.upload();
+        }
+    });
+});
+
+
+
+$(function(){
+	$('#showTab a').click(function (e) {
+		e.preventDefault()
+		$(this).tab('show')
+	})
+
+	loadOther();
+})
+
+function show_map(){
+	$('#map_div').css("display","");
+}
+function close_map(){
+	$('#map_div').css("display","none");
+}
+
+var map =null;
+var point =null;
+$(function(){
+	// 百度地图API功能
+		var lat_baidu = "";
+		var lng_baidu = "";
+
+		var flag = 0;
+       map = new BMap.Map("allmap");
+       var point = new BMap.Point(116.331398,39.897445);
+       map.centerAndZoom(point, 16);
+       map.addEventListener("tilesloaded",function(){
+			$("div.anchorBL").remove();
+	   });
+
+           	// 创建地址解析器实例
+                  var myGeo = new BMap.Geocoder();
+                  // 将地址解析结果显示在地图上,并调整地图视野
+                  myGeo.getPoint("资溪县建设中路41号", function(point){
+                      if (point) {
+
+                          var marker = new BMap.Marker(point);// 创建标注
+                          map.panTo(point);
+                          map.addOverlay(marker); // 将标注添加到地图中
+                          //marker.setAnimation(BMAP_ANIMATION_BOUNCE);//跳动的动画
+                          marker.enableDragging();
+
+                          //var  label =new BMap.Label("资溪县面包产业发展办公室");
+                          //设置那个框的位置
+                          //label.setOffset(new BMap.Size(-40,-60));
+
+                          //label.setPosition(point);
+                          //marker.setLabel(label);
+                          var info = {lng:lng_baidu, lat:lat_baidu, jgmc:"资溪县面包产业发展办公室",tydm:"12361129799463929H", jgdm:"799463929", encJgdm:"8c18ba47fa75baf40befda902b482251", zcdz:"资溪县建设中路41号"};
+
+           	   			marker.addEventListener("click", function(){
+           					var p = this.getPosition();  //获取marker的位置
+
+           					map.setCenter( new BMap.Point(point.lng,point.lat));
+           					openInfoWindow(point, info); //开启信息窗口
+           				});
+
+	           	         map.addEventListener("tilesloaded",function(){
+	           	          map.setCenter( new BMap.Point(point.lng,point.lat));
+	           	          openInfoWindow(point, info); //开启信息窗口
+					       });
+
+
+                      }else{
+
+                      }
+
+                  }, "资溪县面包产业发展办公室");
+
+
+
+
+});
+
+
+$(function(){
+	$("#searchBtn").on("click",function(){
+		//toSearch();
+	});
+
+	$("#keyword").on("keyup",function(e){
+		var keyCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+		if (keyCode == 13) {//输入回车
+			//toSearch();
+		}
+	});
+
+});
+
+
+
+	function loadOther(){
+		$.ajax({
+		    url:path+"/latest/getOtherInfo?jgdm="+"8c18ba47fa75baf40befda902b482251",
+		    type: "POST",
+			data: {},
+			dataType: "json",
+			async: true,
+			cache: false,
+		    beforeSend:function(){
+	    	},
+		    success:function(data){
+	    		if(data.code==0){
+
+	    			if(data.historyList && data.historyList.length>0){
+	    				var newHistoryList=[],isChange=false,lastHistory1,history1;
+						for(var i=0; i<data.historyList.length; i++){
+							isChange = false;
+							history1 = data.historyList[i];
+							if(i==0){
+								isChange = true;
+
+							}else{
+
+						//开始比较变更信息
+				                 if(lastHistory1) {
+
+										if(lastHistory1.jgmc!=history1.jgmc) {
+											isChange = true;
+									    }
+
+
+				                         if(lastHistory1.jgdz!=history1.jgdz) {
+				                         	isChange = true;
+				                         }
+
+
+				                         if(lastHistory1.zch!=history1.zch) {
+				                         	isChange = true;
+				                         }
+
+
+				                         if(lastHistory1.fddbr!=history1.fddbr) {
+				                       		isChange = true;
+				                         }
+
+
+				                         if(lastHistory1.zczj!=history1.zczj) {
+				                         	isChange = true;
+				                         }
+
+
+				                     }
+							}
+							lastHistory1 = history1;
+							if(isChange){
+								newHistoryList.push(history1);
+							}
+						}
+
+
+	    				var _html = '';
+	    				var lastHistory,history;
+						for(var i=0; i<newHistoryList.length; i++){
+
+							history = newHistoryList[i];
+							if(i==0){
+
+								_html += '<div class="item">';
+								_html += '    <div class="maintext">';
+								_html += '        <h3>'+history.bzrq+' 成立</h3>';
+								_html += '        <ul>';
+								_html += '            <li>';
+								_html += '                <label>机构名称</label>';
+								_html += '                <p>'+history.jgmc+'</p>';
+								_html += '            </li>';
+								_html += '            <li class="half">';
+								_html += '                <label>注册地址</label>';
+								_html += '                <p>'+history.jgdz+'</p>';
+								_html += '            </li>';
+								_html += '            <li class="half">';
+								_html += '                <label>登记号</label>';
+								_html += '                <p>'+history.zch+'</p>';
+								_html += '            </li>';
+								_html += '            <li class="half">';
+								_html += '                <label>法定代表人</label>';
+								_html += '                <p>'+history.fddbr+'</p>';
+								_html += '            </li>';
+								_html += '            <li class="half">';
+								_html += '                <label>注册资金</label>';
+								_html += '                <p>'+history.zczj+' 万元</p>';
+								_html += '            </li>';
+								_html += '        </ul>';
+								_html += '    </div>';
+								_html += '    <i class="fa fa-institution icon"></i>';
+								_html += '</div>';
+							}else{
+								var dis_str="";
+								if(i>2){
+								   dis_str="none";
+								}
+								//开始比较变更信息
+                                if(lastHistory) {
+                                    var editType = "fa-pencil";
+                                	_html += '<div class="item dis_class" style="display:'+dis_str+'">';
+    								_html += '    <div class="maintext">';
+    								_html += '        <h3>'+null2str(history.jlrq)+' 变更</h3>';
+    								_html += '        <ul>';
+
+    								if(lastHistory.jgmc!=history.jgmc) {
+                                    	_html += '            <li class="red">';
+                                    }else{
+                                    	_html += '            <li>';
+                                    }
+        								_html += '                <label>机构名称</label>';
+        								_html += '                <p>'+history.jgmc+'</p>';
+        								_html += '            </li>';
+
+                                    if(lastHistory.jgdz!=history.jgdz) {
+                                    	_html += '            <li class="red half">';
+                                    	editType = "fa-map-marker";
+                                    }else{
+                                    	_html += '            <li class="half">';
+                                    }
+        								_html += '                <label>注册地址</label>';
+        								_html += '                <p>'+history.jgdz+'</p>';
+        								_html += '            </li>';
+
+                                    if(lastHistory.zch!=history.zch) {
+                                    	_html += '            <li class="red half">';
+                                    }else{
+                                    	_html += '            <li class="half">';
+                                    }
+        								_html += '                <label>登记号</label>';
+        								_html += '                <p>'+history.zch+'</p>';
+        								_html += '            </li>';
+
+                                    if(lastHistory.fddbr!=history.fddbr) {
+                                    	_html += '            <li class="red half">';
+                                    	editType = "fa-user";
+                                    }else{
+                                    	_html += '            <li class="half">';
+                                    }
+        								_html += '                <label>法定代表人</label>';
+        								_html += '                <p>'+history.fddbr+'</p>';
+        								_html += '            </li>';
+
+                                    if(lastHistory.zczj!=history.zczj) {
+                                    	_html += '            <li class="red half">';
+                                    	editType = "fa-money";
+                                    }else{
+                                    	_html += '            <li class="half">';
+                                    }
+        								_html += '                <label>注册资金</label>';
+        								_html += '                <p>'+history.zczj+' 万元</p>';
+        								_html += '            </li>';
+
+                                    _html += '        </ul>';
+    								_html += '    </div>';
+    								_html += '    <i class="fa '+editType+' icon"></i>';
+    								_html += '</div>';
+    								if(i==2){
+    									_html += '<div style="text-align: center;cursor:pointer;" onClick="dis_history();" id="moreId">点击加载更多...</div>';
+        							}
+                                }
+							}
+							lastHistory = history;
+						}
+						$("#cnt_2 .noData").hide();
+						$("#historyPannel").append(_html).show();
+		    		}
+
+
+	    		}else{
+		    	}
+		    },
+		    error:function(){
+			},
+		    complete:function(){
+			}
+	    });
+
+	}
+	function getNewHistoryList(historyList){
+
+		return newHistoryList;
+	}
+	function null2str(str){
+		if(str == null){
+			str = '';
+		}
+		return str;
+	}
+    /**验证用户登录**/
+    function ajaxValidateLogin(callback){
+        var flag=true;
+        $.ajax({
+            type: "POST",
+            url: "/usercenter/ajaxValidate.login",
+            dataType:"json",
+            async:false,
+            success:function(data){
+                if(data.code == "1"){
+                    flag=false;
+                    login_div(true,callback);
+                }
+            }
+        });
+//        console.log(flag);
+        return flag;
+    }
+
+
+    //收藏
+    function add_collect(){
+
+        //验证登录
+        if(!ajaxValidateLogin(add_collect)){
+            return false;
+        }
+
+        var returnObj = jQuery.ajax({
+            type: "POST",
+            url: "/usercenterM/mycollect/collect.save",
+            data: {"jgdm":'799463929',"jgmc":"资溪县面包产业发展办公室","djh":"未公示","tydm":"12361129799463929H"},
+            dataType:"json",
+            success:function(data){
+                if(data.code == "0"){
+                    if(data.status=='0'){
+                        $("#collect_a").attr("class","active")
+                        mes='收藏成功';
+                    }else{
+                        $("#collect_a").attr("class","")
+                        mes='取消收藏成功';
+                    }
+                    alertInfo(mes);
+                    //window.location.href = ""+data.toUrl;
+                }
+            }
+        });
+
+    }
+
+    //var table_box_html=$("#table_box").html();
+    //显示纠错页
+    function add_correct(){
+        //$("#table_box").html(table_box_html);
+        $("#msg2").html('');
+        //验证登录
+        if(ajaxValidateLogin(add_correct)){
+            $('#alert_correct').show();
+        }
+    }
+
+
+    //提交纠错信息
+    function sub_correct(){
+
+   	 	var fields = "";
+		$("input.fields:checked").each(function(){
+			fields += $(this).val()+",";
+		});
+
+        var flag=false;
+      	var scanuuid = $("#scanUuid").val();
+      	if(scanuuid==''){
+   			$("#msg2").html("请上传图片！");
+            flag=true;
+      	}
+
+
+        if(flag){
+            return false;
+        }
+
+		//验证码
+		captchaObj3.onSuccess(function () {
+			var result = captchaObj3.getValidate();
+			if (!result) {
+				return alert('请完成验证');
+			}
+
+	        $.ajax({
+	            type: "POST",
+	            url: "/usercenterM/correct.save",
+	            data: {'tydm':'12361129799463929H','jgmc':'资溪县面包产业发展办公室','errorcols':fields,'scanUuid':$("#scanUuid").val(),
+	                geetest_challenge: result.geetest_challenge,
+	                geetest_validate: result.geetest_validate,
+	                geetest_seccode: result.geetest_seccode},
+	            dataType:"json",
+	            //async:false,
+	            success:function(data){
+	            	$('.popUp').hide();
+	                if(data.code == "0"){
+	                    alertInfo("纠错信息提交成功！");
+	                    //location.reload()
+	                }else if(data.code == "3"){
+	                    errorInfo("验证失败！");
+			         }else{
+	                    errorInfo(data.mes);
+	                }
+	            }
+	        });
+
+		});
+		captchaObj3.verify();
+
+
+
+    }
+
+    function correct_attr(val){
+        //$(”input[@ name =S_03_22]“).parent().prev().text()
+        var columnName=$(val).val();
+        var value;
+        if(columnName=='jgmc'){
+            value='资溪县面包产业发展办公室';
+        }else if(columnName=='fddbr'){
+            value='曾长华';
+        }else if(columnName=='zczj'){
+            value='18';
+        }else if(columnName=='zcdz'){
+            value='资溪县建设中路41号';
+        }else if(columnName=='jglx'){
+            value='事业单位';
+        }else if(columnName=='djbmmc'){
+            value='资溪县编委会';
+        }else if(columnName=='jyqxz'){
+            value='2018-01-08';
+        }else if(columnName=='jyqxe'){
+            value='2023-01-08';
+        }else if(columnName=='jjlxdm'){
+            value='未公示';
+        }else if(columnName=='jjhydm'){
+            value='未公示';
+        }else if(columnName=='clrq'){
+            value='未公示';
+        }else if(columnName=='jyzt'){
+            value='正常';
+        }else if(columnName=='jyfw'){
+            value='服务产业,服务面包户为面包生产,经营者提供信息劳务,法律服务';
+        }
+
+        var columnValue=$(val).parent().parent().find('td:eq(1)').find("input[name='columnValue']").attr('value',value);
+    }
+
+    var tr_html=$("#tab_tr").html();
+
+    function add_div(){
+    	var index=document.getElementById('table_box').childNodes.length-1;
+    	if(index>4){
+            $("#msg2").html("最多添加5条记录");
+            return false;
+        }
+        var thenew= document.createElement('tr');
+        // thenew.innerHTML = document.getElementById('tab_tr').innerHTML;
+        thenew.innerHTML = tr_html;
+        document.getElementById('table_box').appendChild(thenew);
+    }
+
+    function del_div(){
+        var index=document.getElementById('table_box').childNodes.length-1;
+        if(index>1){
+            document.getElementById('table_box').removeChild(document.getElementById('table_box').childNodes[index]);
+        }else{
+            $("#msg2").html("至少保留一行");
+        }
+    }
+
+	var isLoad = false;
+	$(function(){
+	    //getNbgx("8c18ba47fa75baf40befda902b482251","资溪县面包产业发展办公室","",1);
+
+	    $(".nexus").on("click",".nexus_v_l.add",function(){
+		    if(!isLoad){
+			    var $item = $(this).parent(".nexus_item"),
+			    	_itemJgdm = $item.attr("data-id"),
+			    	_itemJgmc = $item.attr("data-name"),
+			    	_itemZgdm = $item.attr("data-zgdm");
+			    getNbgx(_itemJgdm,_itemJgmc,_itemZgdm,0);
+		    }
+		});
+	    $(".nexus").on("click",".nexus_item_tit",function(){
+			var $item = $(this).parent(".nexus_item"),
+	    	_itemJgdm = $item.attr("data-id"),
+	    	_itemJgmc = $item.attr("data-name"),
+	    	_itemZgdm = $item.attr("data-zgdm");
+	    	if(_itemJgdm){
+		    	location.href="ncsearch://detail/"+_itemJgdm;
+		    }
+		});
+	});
+
+    function getNbgx(jgdm,jgmc,zgdm,isInit) {
+        $.ajax({
+            type:"post",
+            url:"/detail/internalRelations",
+            data:{"jgdm":jgdm,"jgmc":jgmc,"zgdm":zgdm,"userId":"1429306"},
+            dataType:"json",
+            beforeSend:function(){
+            	isLoad = true;
+            },
+            success:function(data){
+				if(data.code==0){
+					if(isInit==1){
+						//拼接父级节点
+						var _parentInfo = data.parentInfo;
+						if(_parentInfo){
+							$("#parentJgId").append('<div class="nexus_zone_cnt">' +
+									'<div class="nexus_item up"> ' +
+	                                	'<div class="nexus_item_cnt" id="jg'+_parentInfo.jgdm+'ChildPannel"> </div>  ' +
+	                                	'<div class="nexus_item_tit branch_up level_2_up" >'+_parentInfo.jgmc+'</div> ' +
+	                                ' </div> </div>');
+						}else{
+							$("#parentJgId").append('<div class="nexus_zone_cnt"> <div class="nexus_item up"> ' +
+	                                '<div class="nexus_item_cnt" > </div>  ' +
+	                                '<div class="nexus_item_tit branch_up level_2_up">没有上级单位</div> ' +
+	                                ' </div> </div>');
+						}
+					}
+
+					//开始拼接子节点内容
+					var $childPannel = isInit==1 ? $("#childJgId") : $("#jg"+jgdm+"ChildPannel");
+					var _childList = data.childList;
+					if(_childList&&_childList.length>0){
+						var dataLevel = isInit==1 ? "2" : $childPannel.attr("data-level");
+						//划出对接到子类节点的线
+                        isInit==1 &&　$("#centerChiJgId").show();
+
+						var _child,_site,_chtml='';
+						for(var i=0;i<_childList.length;i++){
+							_child = _childList[i];
+							_site = i==0 ? 'right': i==_childList.length-1 ? 'left':'';
+							_chtml += '<div class="nexus_item" data-id="'+_child.encJgdm+'" data-name="'+_child.jgmc+'" data-zgdm="'+_child.zgdm+'">';
+							if(_childList.length>1){
+								_chtml += '<div class="nexus_h_l '+_site+'"></div> ';
+							}
+							_chtml += '<div class="nexus_item_tit level_'+dataLevel+'_down branch_down" >'+_child.jgmc+'</div>';
+							if(_child.hasChild==1){
+								_chtml += '<div class="nexus_v_l add"></div>';
+							}
+							_chtml += '<div class="nexus_item_cnt" id="jg'+_child.encJgdm+'ChildPannel" data-level="'+(Number(dataLevel)+1)+'"></div>';
+							_chtml += '</div>';
+						}
+						$childPannel.append(_chtml);
+						_childList.length==1 && $childPannel.prev(".nexus_v_l").remove();
+						isInit==0 && $childPannel.prev(".nexus_v_l.add").removeClass("add");
+					}else{
+						if(isInit==1){
+							//提示没有下级节点
+	                        $("#childJgId").append('<div class="nexus_item">  ' +
+	                                '<div class="nexus_item_tit level_2_down branch_down" >没有下级单位</div>' +
+	                                '  <div class="nexus_item_cnt"> </div></div>');
+						}else{
+							$childPannel.prev(".nexus_v_l.add").remove();
+						}
+					}
+
+					if(isInit==1){
+						setTimeout(function(){
+
+							window.scrollTo($("#centerJgId").position().left - (screen.width - $("#centerJgId").width())/2, 0);
+						},500);
+					}
+
+				}else if(data.code==3){
+					$("#centerJgId").hide();
+                    $(".jumbotron").show();
+				}else{
+					$("#centerJgId").hide();
+                    $("div[name=datapart_5]").attr("class","infomation_cnt no_login");
+				}
+            },
+            error:function(e){
+
+            },
+            complete:function(e){
+            	isLoad = false;
+            }
+        });
+    }
+0
+    window.onload =function(){
+              qrcode = new QRCode(document.getElementById("qrcode2"), {
+            width : 180,//设置宽高
+            height : 180
+        });
+        var BASE_WEB_URL = "https://ss.cods.org.cn";
+        var qrcodeUrl = BASE_WEB_URL + "/mobile/qrcode/8c18ba47fa75baf40befda902b482251";
+        qrcode.makeCode(qrcodeUrl);
+
+
+
+    }
+
+    function dis_history(){
+		$(".dis_class").css("display","");
+		$("#moreId").css("display","none");
+    }
+
+
+    var jiathis_config = {
+    		summary:'--资溪县面包产业发展办公室'
+    }
+
+
+
+    /**
+     * 验证码处理
+     */
+    var captchaObj3="";
+    var handler3 = function (captchaObj) {
+    	captchaObj3=captchaObj;
+
+    };
+
+    $.ajax({
+        url: path+"/gc/geetest/comment?t=" + (new Date()).getTime(), // 加随机数防止缓存
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+
+            // 调用 initGeetest 进行初始化
+            // 参数1：配置参数
+            // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它调用相应的接口
+            initGeetest({
+                // 以下 4 个配置参数为必须，不能缺少
+                gt: data.gt,
+                challenge: data.challenge,
+                offline: !data.success, // 表示用户后台检测极验服务器是否宕机
+                new_captcha: data.new_captcha, // 用于宕机时表示是新验证码的宕机
+
+                product: "bind", // 产品形式，包括：float，popup
+                width: "300px"
+                // 更多配置参数说明请参见：http://docs.geetest.com/install/client/web-front/
+            }, handler3);
+        }
+    });
+
+</script>
+
+
+
+<script type="text/javascript" src="/js/geetest.js?v=v2.0.4"></script>
+<style>
+    .select2-container--default .select2-selection--multiple .select2-selection__choice {
+        border: 4px solid #e4e4e4;
+    }
+    .select2-container--default .select2-selection--multiple {
+        height: 40px;
+    }
+    .baidu-maps label {
+	  max-width: none;
+	}
+    .webuploader-pick {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+     background: #fff;
+     padding: 0px;
+    color: #2f4e8f;
+    text-align: center;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+ #picker div:nth-child(2){width:100%!important;height:100%!important;}
+
+ .title{font:14px/40px Arial,Simsun; color: #000;font-weight: 800;}
+.userForm .each .eachBody{margin-left: 16px;}
+.leftpic{margin-left: 24px;}
+.font{font-size: 10px;margin-left: 139px;color:#999999;}
+.bottom p{float: left;}
+.each p{text-indent:1.2em;}
+.COLOR{color:#999999; font-size: 13px;}
+.eachBody li{float: left;width: 140px;}
+.eachBody input{vertical-align: -2px; vertical-align: -1px;margin-right: 2px;}
+
+</style>
+
+</html>
