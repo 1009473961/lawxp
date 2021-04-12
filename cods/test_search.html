@@ -1,0 +1,88 @@
+
+
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>全国组织机构统一社会信用代码公示查询</title>
+
+<link href="/css/font-awesome/css/font-awesome.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+<link href="/css/iconfont.css" type="text/css" rel="stylesheet" />
+<link href="/css/jump-page.css" type="text/css" rel="stylesheet" />
+<link href="/css/css.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/js/jquery-1.10.2.js?v=v2.0.4"></script>
+<script src="/js/gt.js"></script>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"  media="screen"/>
+<style>
+body{ background:url("/images/bg-1.png") no-repeat; background-position:center 130px;}
+</style>
+<script type="text/javascript">
+var path = "";
+</script>
+<script>
+
+function sendData(){
+	//验证码
+	captchaObj2.onSuccess(function () {
+		var result = captchaObj2.getValidate();
+		if (!result) {
+			return alert('请完成验证');
+		}
+		
+		//var _keyword = $.trim('面包');
+		var _keyword = '面包';
+		var gc='&geetest_challenge='+result.geetest_challenge+"&geetest_validate="+result.geetest_validate+"&geetest_seccode="+result.geetest_seccode;
+		location.href = path+"/latest/searchR?q="+encodeURI(encodeURI(_keyword))+"&t=common&currentPage=1&searchToken=f32bc68ca3b2ae3ea6a2bde82793f262"+gc;	
+	});
+	captchaObj2.verify();
+
+}
+
+var handler = function (captchaObj) {
+	captchaObj2=captchaObj;
+
+    captchaObj.onReady(function () {
+        sendData();
+    });
+
+};
+
+$(document).ready(function(){
+	var data = eval('({"challenge":"ea09c1a845ae804da34565bc76a89ce9","gt":"3a99b6b7637b498ac1f7c02bafa7e9bc","success":1} )');
+    initGeetest({
+        // 以下 4 个配置参数为必须，不能缺少
+        gt: data.gt,
+        challenge: data.challenge,
+        offline: !data.success, // 表示用户后台检测极验服务器是否宕机
+        new_captcha: data.new_captcha, // 用于宕机时表示是新验证码的宕机
+
+        product: "bind", // 产品形式，包括：float，popup
+        width: "300px"
+        // 更多配置参数说明请参见：http://docs.geetest.com/install/client/web-front/
+    }, handler);
+  
+})
+
+//var t=setTimeout(sendData,1000)
+</script>
+
+<script>"undefined"==typeof CODE_LIVE&&(!function(e){var t={nonSecure:"57305",secure:"57219"},c={nonSecure:"http://",secure:"https://"},r={nonSecure:"127.0.0.1",secure:"gapdebug.local.genuitec.com"},n="https:"===window.location.protocol?"secure":"nonSecure";script=e.createElement("script"),script.type="text/javascript",script.async=!0,script.src=c[n]+r[n]+":"+t[n]+"/codelive-assets/bundle.js",e.getElementsByTagName("head")[0].appendChild(script)}(document),CODE_LIVE=!0);</script></head>
+<body data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-79" data-genuitec-path="/GlaucusSearch-V2/WebRoot/WEB-INF/jsp/search/jump_page.jsp">
+<div class="top" data-genuitec-lp-enabled="false" data-genuitec-file-id="wc2-79" data-genuitec-path="/GlaucusSearch-V2/WebRoot/WEB-INF/jsp/search/jump_page.jsp">
+    <div class="container">
+        <div class="word">
+            <div class="word-cnt">
+                <p>您正在查询“<strong>面包</strong>”</p>
+                <p><img src="/images/loader.gif" /></p>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="tit text-center" onClick="sendData();"><button class="button sizeXS blue" style="width: 259px;">如果没有弹出验证码，请点击将重新加载</button></div>
+
+</body>
+
+
+</html>
