@@ -12,3 +12,11 @@ class AllCodsItem(scrapy.Item):
     #pass
     data=scrapy.Field()
     history=scrapy.Field()
+    #for k,v in data.items():
+    #    print
+
+class AllCodsList(scrapy.Item):
+    word=scrapy.Field()
+    url = scrapy.Field()
+    type_word = scrapy.Field()
+

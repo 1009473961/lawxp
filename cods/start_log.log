@@ -1,0 +1,38 @@
+nxh        42893   16812  0 14:24 pts/4    00:00:00 vi longin.py
+1
+bb
+{'_id': ObjectId('6077d79698f9744974c8243a'), 'mobile': '18910628269', 'password': 'Abcd@123', 'state': 'login_again', 'type': 'enterprise', 'jsessionid': ''}
+HTTPSConnectionPool(host='www.cods.org.cn', port=443): Max retries exceeded with url: /cods/member/login?SiteID=1&Referer=https%3A%2F%2Fwww.cods.org.cn%2F (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ff21da91fd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+{'_id': ObjectId('6077d79698f9744974c8243b'), 'mobile': '13301242741', 'password': 'Abcd@123', 'state': 'login_again', 'type': 'enterprise', 'jsessionid': ''}
+HTTPSConnectionPool(host='www.cods.org.cn', port=443): Max retries exceeded with url: /cods/member/login?SiteID=1&Referer=https%3A%2F%2Fwww.cods.org.cn%2F (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7ff21daada00>: Failed to establish a new connection: [Errno 111] Connection refused'))
+nxh        43123   43119  0 14:27 ?        00:00:00 python3 longin.py
+1
+bb
+{'_id': ObjectId('6077d79698f9744974c8243a'), 'mobile': '18910628269', 'password': 'Abcd@123', 'state': 'login_again', 'type': 'enterprise', 'jsessionid': ''}
+a13961b62e5042b3 JWZ63BYBXWSEUzBf8QAckw==
+{'_ZVING_METHOD': 'Gee/tartCaptcha?t=1618468023265', '_ZVING_URL': '%2Fcods%2Fmember%2Flogin', '_ZVING_DATA': '{}', '_ZVING_DATA_FORMAT': 'json'}
+{"success":1,"gt":"df4858fb72da4c56411b3bee788de94c","challenge":"b1f3783a38ae24cebe033a2ce3c43ae1"}
+<RequestsCookieJar[<Cookie JSESSIONID=BD96E80D0A472C53B59B725DC0079E2A for www.cods.org.cn/cods>]>
+{'code': -3, 'message': 'timeout'}
+'validate'
+{'_id': ObjectId('6077d79698f9744974c8243b'), 'mobile': '13301242741', 'password': 'Abcd@123', 'state': 'login_again', 'type': 'enterprise', 'jsessionid': ''}
+d263c6d25bc8442c sg1/I9iPB83as1ayb0+JJw==
+{'_ZVING_METHOD': 'Gee/tartCaptcha?t=1618468055162', '_ZVING_URL': '%2Fcods%2Fmember%2Flogin', '_ZVING_DATA': '{}', '_ZVING_DATA_FORMAT': 'json'}
+{"success":1,"gt":"df4858fb72da4c56411b3bee788de94c","challenge":"7ed939217e4c09ae12e84117d655cfd7"}
+<RequestsCookieJar[<Cookie JSESSIONID=159D48152E8B2941B5B44CBA1DFB92E2 for www.cods.org.cn/cods>]>
+{'code': -3, 'message': 'timeout'}
+'validate'
+{'_id': ObjectId('6077d79698f9744974c8243a'), 'mobile': '18910628269', 'password': 'Abcd@123', 'state': 'login_again', 'type': 'enterprise', 'jsessionid': ''}
+ac29c0d0f6ac4f44 MMumhyKNy19ahQICXsInYg==
+{'_ZVING_METHOD': 'Gee/tartCaptcha?t=1618468143699', '_ZVING_URL': '%2Fcods%2Fmember%2Flogin', '_ZVING_DATA': '{}', '_ZVING_DATA_FORMAT': 'json'}
+{"success":1,"gt":"df4858fb72da4c56411b3bee788de94c","challenge":"ea1fdcd0b99c9f2e41bbdf27956f7e32"}
+<RequestsCookieJar[<Cookie JSESSIONID=7C1685CDD6F25D4F71F5D1F9E5EBE6C2 for www.cods.org.cn/cods>]>
+{'code': -3, 'message': 'timeout'}
+'validate'
+{'_id': ObjectId('6077d79698f9744974c8243b'), 'mobile': '13301242741', 'password': 'Abcd@123', 'state': 'login_again', 'type': 'enterprise', 'jsessionid': ''}
+24e6d8733d524661 3FES3LdHcG0Y3RyxdFnUJQ==
+{'_ZVING_METHOD': 'Gee/tartCaptcha?t=1618468175283', '_ZVING_URL': '%2Fcods%2Fmember%2Flogin', '_ZVING_DATA': '{}', '_ZVING_DATA_FORMAT': 'json'}
+{"success":1,"gt":"df4858fb72da4c56411b3bee788de94c","challenge":"ecc846bb95fa8c177976d333d3de9904"}
+<RequestsCookieJar[<Cookie JSESSIONID=11AB908A8A68F5F0ECD5A33DED30C283 for www.cods.org.cn/cods>]>
+{'code': -3, 'message': 'timeout'}
+'validate'

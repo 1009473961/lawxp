@@ -43,9 +43,17 @@ print(session.cookies)
 head['Cookie']='JSESSIONID=DD9DD89E80ECC7076FB16ACD929B359E'
 s = session.cookies
 s.set('JSESSIONID','DD9DD89E80ECC7076FB16ACD929B359E',path='/', domain='ss.cods.org.cn')
-print(session.cookies)
-
-#exit()
+s.set('JSESSIONID','test',path='/',domain='www.cods.org.cn/cods')
+#print(dict(session.cookies))
+#print(dict(session.cookies))
+for cook in s:
+    print(cook)
+    #print(dict(cook))
+    #print(type(cook))
+    #print(dir(cook))
+    print(getattr(cook,'name'),getattr(cook,'value'),getattr(cook,'domain'))
+#print(s)
+exit()
 list_info = session.get("https://ss.cods.org.cn/latest/searchR?q=%E9%9D%A2%E5%8C%85&t=common&currentPage=1&scjglx=B",headers=head)
 
 print(list_info.cookies)

@@ -1,11 +1,12 @@
 from lxml import etree
 import re
-f = open('item.html','r')
+import json
+f = open('item_test.html','r')
 html=f.read()
 tree = etree.HTML(html)
 data={}
 title=tree.xpath("//div[@class='summary_info clearfix']/h3")[0].text.strip()
-old_title=tree.xpath("//div[@class='summary_info clearfix']/h3/em/@data-content")
+old_title=tree.xpath("//div[@class='summary_info clearfix']/h3/em/@data-content") if tree.xpath("//div[@class='summary_info clearfix']/h3/em/@data-content") else ''
 #print(tree.xpath("//div[@class='summary_info clearfix']/ul/li"))
 #print(tree.xpath("//div[@class='summary_info clearfix']/ul/li[1]/text()"))
 data['title'] = title
@@ -41,3 +42,15 @@ for half in tree.xpath("//div[@class='detmain']/ul/li"):
         half_v = ''.join(half.xpath("./text()")).strip()
     data[half_k] = half_v
 print(data)
+print(type(data))
+c = open('test_code.csv','w')
+new_data = {}
+for k,v in data.items():
+    #print(repr(k),type(k))
+    #print(v,type(v))
+    new_data[k.encode('utf8')] = v.encode('utf-8')
+print(new_data)
+print(json.dumps(data))
+#c.write(json.dumps(new_data))
+for k in data:
+    c.write(k+'\n')

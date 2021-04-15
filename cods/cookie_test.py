@@ -4,21 +4,25 @@ import re
 from lxml import etree
 reurl = 'https://ss.cods.org.cn/latest/searchR?q=%E7%9F%B3%E5%AE%B6%E5%BA%84%E4%B8%AD%E5%AD%A6&t=common&currentPage=1&scjglx=B'
 
-#url='https://ss.cods.org.cn/latest/detail?jgdm=7bee23e2d245f9c4114f07bfd13f857d'
-url='https://ss.cods.org.cn/latest/searchR?q=面包&t=common&currentPage=1&scjglx=B'
+url='https://ss.cods.org.cn/latest/detail?jgdm=7bee23e2d245f9c4114f07bfd13f857d'
+#url='https://ss.cods.org.cn/latest/searchR?q=面包&t=common&currentPage=1&scjglx=B'
 head = {'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'Accept-Encoding':'gzip, deflate, br',
         'Accept-Language':'zh-CN,zh;q=0.9',
         'Connection':'keep-alive',
-        'Cookie':'kefuCookie=fbd0c5f257544623ae2df7cb5008b767; JSESSIONID=8FA02447FC01353269C961FEBD034F98',
+        'Cookie':'JSESSIONID=9D4BA36F60798EDE38DDF8B147291640',
         'Host':'ss.cods.org.cn',
         'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36',
         'Referer':reurl}
 r=requests.get(url,headers=head)
 print(r.text)
+f = open('error_item.html','w')
+f.write(r.text)
+f.flush()
+f.close()
 tree = etree.HTML(r.text)
 #详情页测试
-'''
+
 data={}
 title=tree.xpath("//div[@class='summary_info clearfix']/h3")[0].text.strip()
 old_title=tree.xpath("//div[@class='summary_info clearfix']/h3/em/@data-content")
@@ -65,10 +69,12 @@ print(data)
 
 for info in tree.xpath("//div[@class='result result-2']/div[@class='each has-img']/div[@class='tit']/a"):
         print(info.xpath("./@title"))
-f = open('list_page.html','w')
-f.write(r.text)
-f.flush()
-f.close()
+
+#f = open('list_page.html','w')
+#f.write(r.text)
+#f.flush()
+#f.close()
+'''
 
 
 
