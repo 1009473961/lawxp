@@ -7,7 +7,12 @@ import sys
 import json
 import subprocess
 import pymongo
+import random
 db = pymongo.MongoClient(host='127.0.0.1').admin
+t = int(time.time())
+proxy_list = [x['host'] for x in db.proxy_list.find() if x['endtime'] > t]
+print(random.choice(proxy_list))
+#exit()
 head={'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
         'Accept-Encoding':'gzip, deflate, br',
         'Accept-Language':'zh-CN,zh;q=0.9',
@@ -35,8 +40,7 @@ def post_username(key,username,password):
     print(r.text)
     data = json.loads(r.text)
     print(r.cookies)
-    get_url = 'http://116.90.87.38:8094/crack?gt=%s&challenge=%s&success=%s' % (
-    data['gt'], data['challenge'], data['success'])
+    get_url = 'http://116.90.87.38:8094/crack?gt=%s&challenge=%s&success=%s' % (data['gt'], data['challenge'], data['success'])
     void_response = session.get(get_url)
     void_data = json.loads(void_response.text)
     print(void_data)
@@ -115,7 +119,8 @@ def word_search(username):
         if name == 'JSESSIONID' and domain=='ss.cods.org.cn':
             print(name,value,domain,username)
             #db.user_cookie.update({''}{'mobile':username,'password':password,'jsessionid':value,'state':'available'})
-            db.user_cookie.update_one({'mobile':username},{'$set':{'jsessionid':value,'state':'available'}})
+            #db.test_cookie.update_one({'mobile':username},{'$set':{'jsessionid':value,'state':'available'}})
+            db.test_cookie.insert({'mobile': username, 'password': 'Abcd@123', 'state': 'available', 'type': 'enterprise','jsessionid':value})
             time.sleep(10)
 
 
@@ -125,6 +130,7 @@ if __name__ == '__main__':
     import datetime
     c = open('login_user_log.csv','a+')
     user_info = list(db.user_cookie.find({'state':'login_again'}))
+    #user_info = list(db.user_cookie.find({'mobile':'13301242741'}))
     for info in user_info:
         c.write('%s,%s,%s,%s\n'%(str(datetime.datetime.now()),info['mobile'],info['state'],info['jsessionid']))
         session = requests.session()

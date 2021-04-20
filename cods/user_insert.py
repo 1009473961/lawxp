@@ -3,10 +3,25 @@ import random
 db = pymongo.MongoClient('127.0.0.1').admin
 
 pw = 'Abcd@123'
-for user in ['18910628269','13301242741']:
-    #db.user_cookie.insert({'mobile':user,'password':pw,'state':'login_again','type':'enterprise'})
+for user in ['17310273245',#8001 5
+          '17310464023',#8001，7
+          '17310264793',#8001,10
+          '17718521532',#8000,2
+          '17710464571',
+          '15311916734',
+          '17310295613',
+          '17710477046',
+          '15313844063',
+          '17718592135',
+          '17310262147',
+          '15301162524',
+          '17777843601',
+          '17777840537',
+          '17710279326'
+          ]:
+    db.user_cookie.insert({'mobile':user,'password':pw,'state':'login_again','type':'enterprise','jsessionid':''})
 
-    db.user_cookie.update({'mobile': user}, {'$set': {'jsessionid': '', 'state': 'login_again'}})
+    #db.test_cookie.update({'mobile': user}, {'$set': {'jsessionid': '', 'state': 'login_again'}})
 #username='17310374212'
 #value='70BFEADFC9C5A42E35D1C3A0388E6EEB'
 
