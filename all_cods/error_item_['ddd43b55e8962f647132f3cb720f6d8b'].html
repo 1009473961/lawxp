@@ -1,0 +1,573 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="initial-scale=1,target-densitydpi=device-dpi,minimum-scale=1,maximum-scale=1,user-scalable=1" />
+<title>sorry</title>
+<link href="/css/font-awesome/css/font-awesome.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+<link href="/css/bootstrap.min.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+<link href="/css/css.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+<link href="/css/error.css?v=v2.0.4" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="/js/jquery-1.10.2.js?v=v2.0.4"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js?v=v2.0.4"></script>
+</head>
+ <script type="text/javascript">
+     var path = "";
+     var arrList = new Array();
+     $(function(){
+     	$('.search-box-select h3').click(function(){
+     		$(this).parents('.search-box-select').find('ul').toggle(
+     			function(){
+     				$('.search-box-main').addClass('open');
+     			},
+     			function(){
+     				$('.search-box-main').removeClass('open');
+     			}
+     		);
+
+     	});
+     	$('.search-box-select ul li').click(function(){
+     		$(this).parents('.search-box-select ul').hide();
+     		$('.search-box-select h3').html($(this).html());
+     	});
+
+     	$('#showTab a').click(function (e) {
+     		e.preventDefault()
+     		$(this).tab('show')
+     	})
+     });
+ </script>
+<body>
+<div class="container">
+	<!--topBar-->
+	
+
+<script src="/js/gt.js"></script>
+<link href="/css/iconfont.css" type="text/css" rel="stylesheet" />
+<script src="/js/uuid.js"></script>
+<script src="/js/sm2/index.js"></script>
+<script type="text/javascript" src="/js/jquery.placeholder.min.js"></script>
+<script type="text/javascript" src="/js/alertCommon.js"></script>
+<script>
+    $(function(){
+        $('input[placeholder]').placeholder();
+    });
+</script>
+
+	
+
+    
+	<div class="top">
+    	<div class="top-center">
+        	<div class="logo logo-2" id="divLogin" onclick="javascript:window.location.href = 'https://www.cods.org.cn/'" style="cursor:pointer">
+                <h3>全国组织机构统一社会信用代码公示查询</h3>
+                <h6>Unified social credit code query of national organization</h6>
+            </div>
+
+            <input type="hidden" value="common" id="search_name"/>
+            <!-- search -->
+            <div class="search">
+                <div class="search-box-main sm">
+                    <div class="search-box-left">
+                        <div class="search-box-select">
+                            <h3>代码/名称</h3>
+                            <ul style="display:;">
+                                <li onClick="setValue('common')">代码/名称</li>
+                                <li onClick="setValue('zcdz')">注册地址</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="search-box-middle">
+                        <input type="text" class="ipt_2 search-box-input search_input" autocomplete="off" placeholder="输入统一社会信用代码、机构名称等关键字" id="keyword">
+                    </div>
+                    <div class="search-box-right">
+                        <button type="button" class="search-box-btn" id="searchBtn"><i class="fa fa-search fa-flip-horizontal"></i></button>
+                    </div>
+                </div>
+            </div>
+            <!-- /search -->
+
+            <!-- user -->
+            <div class="topuser">
+            	<div class="btn-group">
+            	
+					
+					
+                    <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+                        <em><img src="/images/thumbnails.png" /></em>
+                        <p>173****4212</p>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="/usercenterM/regMain" target="_blank"><i class="fa fa-user fa-fw"></i> 个人中心</a></li>
+                               <!--<li class="divider"></li>
+	                        <li><a href="/usercenterM/jgService" target="_blank"><i class="fa fa-user fa-cube"></i> 机构服务</a></li>-->
+	                    <li class="divider"></li>
+                        <li><a href="javascript:outLogin('');"><i class="fa fa-newspaper-o fa-fw"></i> 退出</a></li>
+                    </ul>
+                    
+					
+                </div>
+            </div><!-- /user -->
+        </div>
+    </div>
+    
+
+   <form action="" id="loginForm">
+	<div class="popUp" id="login_div" style="display:none;">
+	    <div class="box"><!--内容-->
+	        <div class="heading">
+	            <h3 class="title">登录账号</h3>
+	            <a class="close" href="javascript:login_div_none();"><i class="iconfont">&#xe668;</i></a>
+	        </div>
+	        <div class="main">
+	        	<!--登录-->
+	            <div class="query" id="user_form" style="display:;">
+	                <div class="each">
+	                    <div class="ico"><img src="/images/icon_user.png" /></div>
+	                    <div class="cdtn">
+	                        <input type="text" name="user_name" id="user_name" class="ipt_1" placeholder="手机号" />
+	                    </div>
+	                </div>
+	                <div class="each">
+	                    <div class="ico"><img src="/images/icon_password.png" /></div>
+	                    <div class="cdtn">
+	                        <input type="password" name="user_pswd" id="user_pswd" autocomplete="off"  class="ipt_1" placeholder="密码" />
+	                    </div>
+	                </div>
+	                <div class="each" style="padding-left: 0px;">
+	                    <div class="cdtn" id="captcha">
+	                         <p id="wait" class="">正在加载验证码......</p>
+	                    </div>
+	                </div>
+
+	                <div class="each button">
+	                    <button type="button" class="btn_1" id="sub" >登 录</button>
+	                </div>
+
+	                <div class="each text" style="text-align: center;">
+	                    <button class="button white sizeS h30" type="button" onClick="phone_login();"><i class="fa fa-qrcode"></i> 点击扫描二维码登录</button>
+	                </div>
+
+	                <div class="each prompt" style="display:none;text-align: center;" id="msg_space">
+	                	<p class="red" id="msg">请输入用户名！</p>
+	                </div>
+					<div class="prompt" style="display:none;text-align: center;">
+						<p style="color:red;" >当前系统访问量大，系统响应可能存在延迟，为提升您的使用体验，建议您登录后再尝试。</p>
+					</div>
+	                <div class="each text">
+	                	<p class="prompt floatRight">已注册APP（V1.0以上）用户可直接扫码登陆</p>
+	                	<p class="prompt floatLeft"><a href="javascript:window.location.href = '/usercenter/reg'">注册账号</a>&nbsp;&nbsp;<a href="javascript:window.location.href = '/usercenter/findPw'">忘记密码</a></p>
+						<!--<p class="prompt floatLeft"><a href="javascript:" onclick="weihu()">注册账号</a>&nbsp;&nbsp;<a href="javascript:"  onclick="weihu()">忘记密码</a></p>-->
+	                </div>
+	            </div>
+	            <!--登录 over-->
+	        	<!--登录-->
+	            <div class="query" id="phone_form" style="display:none;">
+                    <dl class="item">
+                        <dt class="tit text-center"><label class="text-center">请使用<b>"手机APP"</b>扫码登录</label></dt>
+                        <dd class="cnt">
+
+                            <div class="qrcode-login" style="display: ;" id="code_img">
+                                <img src="" id="Img"  onclick="change();" style="height:200px; max-height:1000px;" />
+                            </div>
+                            <div class="qrcode-login" style="display:none ;" id="code_mes">
+                                <h6>
+                                    <i class="fa fa-check-circle fa-3x text-theme"></i>
+                                </h6>
+                                <h4>扫描成功</h4>
+                                <h5>请在手机上确认登录</h5>
+                            </div>
+                            <div class="qrcode-login" style="display:none ;" id="code_success">
+                                <h6>
+                                    <i class="fa fa-check-circle fa-3x text-success"></i>
+                                </h6>
+                                <h4>登录成功</h4>
+                                <h5>准备跳转页面...</h5>
+                            </div>
+                            <div class="qrcode-login" style="display:none ;" id="code_close">
+                                <h6>
+                                    <i style="display:;" class="fa fa-exclamation-circle fa-3x text-danger" ></i>
+                                </h6>
+                                <h4>取消登录</h4>
+                                <h5 style="display:;"><button type="button" class="button sizeXS h30 red" onClick="flush();">刷新二维码</button></h5>
+                            </div>
+
+                        </dd>
+                    </dl>
+
+	                <div class="each text" style="text-align: center;">
+	                    <button class="button white sizeS h30" type="button" onClick="user_login();"><i class="fa fa-desktop"></i> 输入密码登录</button>
+	                </div>
+
+	            </div>
+	            <!--登录 over-->
+	        </div>
+	    </div>
+	</div>
+	</form>
+
+	<script>
+	var isOpen=false;
+	var url;
+	function user_login(){
+		$("#user_form").css("display","");
+		$("#phone_form").css("display","none");
+		isOpen=false;
+	}
+	function phone_login(){
+		$("#user_form").css("display","none");
+		$("#phone_form").css("display","");
+		isOpen=true;
+		if(!isSend){
+			getMsg();
+		}
+	}
+
+	var uuid='';
+	function change() {
+		var img = document.getElementById("Img");
+		uuid=Math.uuid();
+		//uuid='6D72B180-C333-453C-AF53-7422CFB4B11F';
+		img.src = "/qrCode/GetQrCode?uuid="+ uuid;
+	}
+
+	function flush(){
+	    $("#code_close").css("display","none");
+	    $("#code_img").css("display","");
+	    $("#code_mes").css("display","none");
+		change();
+		opt='';
+	}
+
+	$(function () {
+
+	  change();
+	  getMsg();
+
+	});
+
+	var isSend=false;
+	var opt='';
+	function getMsg()
+	{
+		isSend=true;
+	    $.ajax({
+	        url:"/qrCode/LongConnectionCheck?time="+Math.random(),
+	        type:"get",
+	        data:{'uuid':uuid,'opt':opt},
+	        dataType:"json",
+	        //async: false,
+	        success:function(data) {
+	            if(data.code=='0'){
+	            	opt='0';
+	                $("#code_img").css("display","none");
+	                $("#code_mes").css("display","");
+	            }else if(data.code=='2'){
+	            	opt='2';
+	                $("#code_close").css("display","");
+	                $("#code_img").css("display","none");
+	                $("#code_mes").css("display","none");
+	                $("#code_success").css("display","none");
+	            }else if(data.code=='1'){
+	            	opt='1';
+	                $("#code_img").css("display","none");
+	                $("#code_mes").css("display","none");
+	                $("#code_success").css("display","");
+	                //window.location.href = '/search';
+	                location.reload();
+	            }else if(data.code=='-1'){
+	                alert('登录异常');
+	            }
+	            if(isOpen){
+	            	getMsg();
+				}
+	            isSend=false;
+	            //getMsg();
+	        }
+	    });
+	}
+
+
+	function login_div(){
+		$("#login_div").css("display","block");
+	}
+	//处理session 失效登录
+	var isLogin=false;
+	var back;
+	function login_div(flag,callback){
+		isLogin=flag;
+		back=callback;
+		$("#login_div").css("display","block");
+	}
+
+	function login_div_none(){
+		isOpen=false;
+		$("#login_div").css("display","none");
+	}
+
+
+	function userLogin(){
+		if($.trim($("#user_name").val()).length ==0 || "请输入用户名..."==$.trim($("#user_name").val())){
+			$("#msg").html("请输入用户名！");
+			$("#msg_space").css("display","");
+			$("#user_name").focus();
+			return false;
+		}
+		if($.trim($("#user_pswd").val()).length ==0){
+			$("#msg").html("请输入密码！");
+			$("#msg_space").css("display","");
+			$("#show_user_pswd").focus();
+			return false;
+		}
+
+	    var returnObj = jQuery.ajax({
+	        type: "POST",
+	        url: "/usercenter/validateLogin",
+	        data: $("#loginForm").serialize(),
+	        dataType:"json",
+	        beforeSend: function(send) {
+	            $("#login_but").attr("disabled",true);
+	            $("#login_but").html("登录中...");
+	        },
+	        success:function(data){
+				if(data.code == "0"){
+					location.reload();
+					/**if(isLogin){
+					location.reload();
+					//login_div_none();
+					//back();
+					//alertInfo('操作成功！');
+					}else{
+					window.location.href = data.toUrl;
+					}**/
+				}else if(data.code == "1"){
+					$("#msg").html("用户名或密码错误！");
+					$("#msg_space").css("display","");
+
+				}else{
+					$("#msg").html("系统异常，请稍候再试！");
+					$("#msg_space").css("display","");
+					}
+	    	},
+	        complete: function() {
+	   		 $("#login_but").attr("disabled",false);
+	         $("#login_but").html("登录");
+	       }
+	    });
+	}
+
+
+	var handler2 = function (captchaObj) {
+	    captchaObj.appendTo('#captcha');
+	    captchaObj.onReady(function () {
+	        $("#wait").hide();
+	        $("#wait").css("dispaly","none");
+	    });
+        captchaObj.onSuccess(function () {
+			$('#sub').click();
+        })
+
+	    $('#sub').click(function () {
+	    	if($.trim($("#user_name").val()).length ==0 || "请输入用户名..."==$.trim($("#user_name").val())){
+	    		$("#msg").html("请输入用户名！");
+	    		$("#msg_space").css("display","");
+	    		$("#user_name").focus();
+	    		return false;
+	    	}
+	    	if($.trim($("#user_pswd").val()).length ==0){
+	    		$("#msg").html("请输入密码！");
+	    		$("#msg_space").css("display","");
+	    		$("#show_user_pswd").focus();
+	    		return false;
+	    	}
+
+	        var result = captchaObj.getValidate();
+	        if (!result) {
+	        	$("#msg").html("请完成验证！");
+				$("#msg_space").css("display","");
+	            return false;
+	        }
+			var user_pawd = $('#user_pswd').val();
+            var curve = "sm2";
+            var pubkeyHex = "04a494ef2071cce6524c6761dc6853a7024d023cd5169fbe2e3a3e2914f3febb15617058e90c5dc1adde01eb718e69b47b54819dc1810770bab8f8c4095b2d4178";
+            var encryptData = sm2Encrypt(user_pawd, pubkeyHex, 0);  //加密
+
+	        $.ajax({
+	        	url: "/usercenter/validateLogin",
+	            type: 'POST',
+	            dataType: 'json',
+	            data: {
+	        		user_name: $('#user_name').val(),
+	        		user_pswd: encryptData,
+	                geetest_challenge: result.geetest_challenge,
+	                geetest_validate: result.geetest_validate,
+	                geetest_seccode: result.geetest_seccode
+	            },
+	            success:function(data){
+	    			if(data.code == "0"){
+	    				//window.location.href = data.toUrl;
+	    				//location.reload();
+	    				var _keyword = $.trim($("#keyword").val());
+	    				//alert(data.postJsonString);
+	    				location.href = path+"/latest/searchR?q="+encodeURI(encodeURI(_keyword))+"&currentPage=1&t=common&searchToken=";
+
+
+	    			}else if(data.code == "1"){
+	    				$("#msg").html("用户名或密码错误！");
+	    				$("#msg_space").css("display","");
+	    				captchaObj.reset();
+
+	    			}else if(data.code == "2"){
+	    				$("#msg").html("该账户已被停用！");
+	    				$("#msg_space").css("display","");
+	    				captchaObj.reset();
+
+	    			}else if(data.code == "3"){
+	    				$("#msg").html("验证失败！");
+	    				$("#msg_space").css("display","");
+	    				captchaObj.reset();
+
+	    			}else{
+	    				$("#msg").html("系统异常，请稍候再试！");
+	    				$("#msg_space").css("display","");
+	    				captchaObj.reset();
+	    				}
+	        	},
+	            complete: function() {
+	        		 $("#sub").attr("disabled",false);
+	                 $("#sub").html("登录");
+	            }
+	        });
+	    })
+	    // 更多接口说明请参见：http://docs.geetest.com/install/client/web-front/
+	    window.gt = captchaObj;
+	};
+
+	$.ajax({
+	    url: "/gc/geetest/login?t=" + (new Date()).getTime(), // 加随机数防止缓存
+	    type: "get",
+	    dataType: "json",
+	    success: function (data) {
+
+	        // 调用 initGeetest 进行初始化
+	        // 参数1：配置参数
+	        // 参数2：回调，回调的第一个参数验证码对象，之后可以使用它调用相应的接口
+	        initGeetest({
+	            // 以下 4 个配置参数为必须，不能缺少
+	            gt: data.gt,
+	            challenge: data.challenge,
+	            offline: !data.success, // 表示用户后台检测极验服务器是否宕机
+	            new_captcha: data.new_captcha, // 用于宕机时表示是新验证码的宕机
+
+	            product: "popup", // 产品形式，包括：float，popup
+	            width: "320px"
+	            // 更多配置参数说明请参见：http://docs.geetest.com/install/client/web-front/
+	        }, handler2);
+	    }
+	});
+
+	$(function(){
+		$("#searchBtn").on("click",function(){
+			toSearch();
+		});
+
+		$("#keyword").on("keyup",function(e){
+			var keyCode = e.keyCode ? e.keyCode : e.which ? e.which : e.charCode;
+			if (keyCode == 13) {//输入回车
+				toSearch();
+			}
+		});
+
+	});
+
+	function toSearch(){
+		var currentPage = 1;
+		var _keyword = $.trim($("#keyword").val());
+		if(_keyword.length<=0){
+			$("#keyword").focus();
+		}else{
+			if(typeof captchaobj2 !== 'undefined'){
+
+				toSearch();
+				return false;
+			}
+			$.ajax({
+			    url: "/latest/isSearch",
+			    type: "get",
+			    dataType: "json",
+			    success: function (data) {
+					if(data.code=='1'){
+						//验证码
+						captchaObj2.onSuccess(function () {
+							var result = captchaObj2.getValidate();
+							if (!result) {
+								return alert('请完成验证');
+							}
+
+				       		var type=$("#search_name").val();
+				       		if(type=="undefined" || type=="" || type==null || type==undefined){
+				       			type="common";
+				       		}
+							var gc='&geetest_challenge='+result.geetest_challenge+"&geetest_validate="+result.geetest_validate+"&geetest_seccode="+result.geetest_seccode;
+							location.href = path+"/latest/searchR?q="+encodeURI(encodeURI(_keyword))+"&t="+type+"&currentPage=1&searchToken="+gc;
+						});
+						captchaObj2.verify();
+					}else{
+						location.href = path+"/latest/searchR?q="+encodeURI(encodeURI(_keyword))+"&currentPage=1&t=common&searchToken=";
+					}
+			    }
+			});
+
+
+
+		}
+	}
+
+
+
+	function setValue(str){
+		$("#search_name").val(str);
+		if(str=='common'){
+			$("#keyword").attr('placeholder','输入统一社会信用代码、机构名称等关键字');
+		}else{
+			$("#keyword").attr('placeholder','输入注册地址等关键字');
+		}
+	}
+    function weihu(){
+	    $("#msg_space").show();
+        $("#msg").html("系统正在升级,请稍后再试!");
+    }
+	</script>
+
+    <!--topBar-->
+
+
+    <div class="not-found clearfix">
+        <div class="row">
+            <div class="col-sm-6 col-sm-offset-3 text-center"><img src="/images/error-1.png" class="img-responsive" /></div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1 class="text-theme margin-vertical"></h1>
+                <!--  <p>您所在的IP访问过于频繁，被封不能继续使用，将在3日后解除!</p>-->
+                <p>您的信息查询过于频繁，疑似非法访问，系统将暂停为您提供服务!</p>
+                <div class="margin-vertical">
+                    <button type="button" class="btn btn-primary" onclick="window.location.href='https://ss.cods.org.cn/portal'">回到首页</button>
+                    <button type="button" class="btn btn-default" onclick="javascript:history.back(-1);">返回上一级</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <p>Copy 2018 全国组织机构统一社会信用代码数据服务中心   京ICP备09064497号 <br /> 京公网安备110102001257 <a href="/css/serviceInfo.html" target="_blank" style="color:blue;">《法律声明》</a>和<a href="/css/privacyInfo.html" target="_blank" style="color:blue;">《隐私政策》</a></p>
+    </div>
+
+</div>
+
+</body>
+<script type="text/javascript" src="/js/geetest.js?v=v2.0.4"></script>
+</html>

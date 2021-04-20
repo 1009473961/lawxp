@@ -2,12 +2,16 @@
 #
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-
+from scrapy.downloadermiddlewares.useragent import UserAgentMiddleware
+from scrapy.downloadermiddlewares.retry import RetryMiddleware
 from scrapy import signals
 
 # useful for handling different item types with a single interface
 from itemadapter import is_item, ItemAdapter
-
+import random
+from .ua_list  import agents
+import pymongo
+db = pymongo.MongoClient('127.0.0.1').admin
 
 class AllCodsSpiderMiddleware:
     # Not all methods need to be defined. If a method is not defined,
@@ -101,3 +105,26 @@ class AllCodsDownloaderMiddleware:
 
     def spider_opened(self, spider):
         spider.logger.info('Spider opened: %s' % spider.name)
+
+
+class UserAgentmiddleware(UserAgentMiddleware):
+    def cooke_head(self):
+        jsessionid_list = [x['jsessionid'] for x in db.user_cookie.find({'mobile': '13301242741'})]
+        cook = {'JSESSIONID':random.choice(jsessionid_list)}
+
+        return cook
+    def process_request(self, request, spider):
+        agent = random.choice(agents)
+        cook = self.cooke_head()
+        request.headers['User-Agent'] = agent
+        request.cookies = cook
+        #print(request.cookies)
+        #print(request.headers)
+        #return None
+
+
+
+
+
+
+

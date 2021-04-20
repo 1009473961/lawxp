@@ -7,7 +7,7 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 import datetime
-BOT_NAME = 'all_cods'
+BOT_NAME = 'all_code'
 
 SPIDER_MODULES = ['all_cods.spiders']
 NEWSPIDER_MODULE = 'all_cods.spiders'
@@ -16,6 +16,25 @@ to_day = datetime.datetime.now()
 log_file_path = 'log/all_cods_scrapy_%s_%s_%s.log'%(to_day.year,to_day.month,to_day.day)
 LOG_LEVEL='INFO'
 LOG_FILE=log_file_path
+
+
+REDIS_HOST = '127.0.0.1'
+REDIS_PORT = 6379
+
+#REDIS_PARAMS = {'db': 2}
+
+
+SCHEDULER = "scrapy_redis.scheduler.Scheduler"
+
+DUPEFILTER_CLASS = "scrapy_redis.dupefilter.RFPDupeFilter"
+
+SCHEDULER_PERSIST = True
+
+SCHEDULER_QUEUE_CLASS = 'scrapy_redis.queue.PriorityQueue'
+REDIS_START_URLS_AS_SET=False
+#REDIS_START_URLS_KEY = 'redis_code_word:start_urls'
+
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'all_cods (+http://www.yourdomain.com)'
@@ -46,6 +65,15 @@ DOWNLOAD_DELAY = 3
 #   'Accept-Language': 'en',
 #}
 
+DEFAULT_REQUESTS_HEADERS={
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+            'Accept-Encoding': 'gzip, deflate, br',
+            'Accept-Language': 'zh-CN,zh;q=0.9',
+            'Connection': 'keep-alive',
+            'Host': 'ss.cods.org.cn'}
+
+
+
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
@@ -54,9 +82,10 @@ DOWNLOAD_DELAY = 3
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'all_cods.middlewares.AllCodsDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+    'all_cods.middlewares.AllCodsDownloaderMiddleware': 543,
+    'all_cods.middlewares.UserAgentmiddleware':600,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
